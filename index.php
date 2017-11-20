@@ -5,7 +5,6 @@
     <title>Title of the document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <div id="titel" class="titelimage">
