@@ -1,0 +1,120 @@
+body {
+    display: grid;
+    grid-template-areas:
+            "titel header header"
+            "sidebar article article"
+            "footer footer footer";
+    grid-template-rows: 80px 1fr 70px;
+    grid-template-columns: 150px 1fr 15%;
+    grid-row-gap: 15px;
+    grid-column-gap: 10px;
+    height: 80vh;
+    margin: 3%;
+    font-family: 'Open Sans', 'sans-serif';
+    background: linear-gradient(-90deg, royalblue, white, royalblue);
+    background-size: 100%;
+}
+header, footer, article, nav, div {
+    padding: 1.2em;
+    background: darkgray;
+    border-radius: 5px;
+}
+
+.titelimage{
+    
+    background-image: url(https://cdn-buttinette.com/shop/ALL/zwischenseiten/12000/farben-stifte.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#pageHeader {
+    grid-area: header;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+
+}
+#pageFooter {
+    grid-area: footer;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+#mainArticle {
+    grid-area: article;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+#mainArticle > div {
+background-color: white;
+}
+
+#mainNav {
+    grid-area: sidebar;
+}
+#titel {
+    grid-area: titel;
+}
+#pageHeader ul {
+    vertical-align: middle;
+    list-style-type: none;
+}
+#pageHeader li {
+    float: left;
+}
+#pageHeader li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#pageHeader form{
+
+}
+#sidebar{
+    text-align: center;
+}
+#sidebar ul{
+    list-style-type: none;
+    padding: 0px;
+    max-width: 10em;
+    overflow: hidden;
+}
+#sidebar .sidebar-header{
+    padding: 0px;
+    max-width: 10em;
+    overflow: hidden;
+}
+ul.breadcrumb {
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+}
+ul.breadcrumb li {
+    display: inline;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+/* Stack the layout on small devices/viewports. /
+@media all and (max-width: 575px) {
+    body {
+        grid-template-areas:
+                "header"
+                "article"
+                "ads"
+                "nav"
+                "footer";
+        grid-template-rows: 80px 1fr 70px 1fr 70px;
+        grid-template-columns: 1fr;
+    }*/
+}
