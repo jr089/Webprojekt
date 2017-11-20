@@ -1,12 +1,12 @@
 <?php
 
-if (isset($_POST["login"]) AND isset($_POST["passwort"]))
+if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
 {
 
-    $passwort=($_POST["passwort"]);
-    $stmt=$db->prepare("SELECT * FROM Login WHERE login=:login AND passwort=:passwort");
-    $stmt->bindParam(":login", $_POST["login"]);
-    $stmt->bindParam(":passwort", $passwort );
+    $passwort=($_POST["Passwort"]);
+    $stmt=$db->prepare("SELECT * FROM Nutzer WHERE Email=:Email AND Passwort=:Passwort");
+    $stmt->bindParam(":Email", $_POST["Email"]);
+    $stmt->bindParam(":Passwort", $passwort );
     if(!$stmt->execute()) {
         echo "Datenbank-Fehler (S01)";
         $arr = $stmt->errorInfo();
@@ -21,8 +21,8 @@ if (isset($_POST["login"]) AND isset($_POST["passwort"]))
     }
     else
     {
-        $_SESSION["login"]=$row["login"];
-        $_SESSION["name"]=$row["name"];
+        $_SESSION["Email"]=$row["Email"];
+        $_SESSION["Name"]=$row["Name"];
         echo "angemeldet !";
     }
 
