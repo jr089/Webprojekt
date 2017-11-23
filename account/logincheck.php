@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include "../userdata.php";
 if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
 {
 
@@ -23,7 +24,8 @@ if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
     {
         $_SESSION["Email"]=$row["Email"];
         $_SESSION["Name"]=$row["Name"];
-        echo "angemeldet !";
+        $_SESSION["login"] = $row["Email"];
+        header ("Location: ../index.php");
     }
 
 
