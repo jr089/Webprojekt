@@ -41,6 +41,7 @@
     <div class="sidebar-header">
         <h3>Navigation</h3>
     </div>
+
     <!-- Sieht man immer, auch wenn man nicht eingeloggt ist -->
     <ul>
         <li><a href="#?page=artikel&action=stifte">Stifte</a></li>
