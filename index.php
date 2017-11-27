@@ -79,14 +79,16 @@
                     //Benutzer eingeloggt
                     echo '
                         <li><a href="#?page=profil&action=ansehen">Bestellungen ansehen</a></li>
-                        <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>';
+                        <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>
+                        <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 }
 
                 elseif ($row["Rollen_ID"] == 2) {                //Admin eingeloggt -> kann Backend sehen & bearbeiten
                     echo '
                         <li><a href="#?page=backend&action=bestellungen">Bestellungen</a></li>
                         <li><a href="#?page=backend&action=artikel">Artikel</a></li>
-                        <li><a href="#?page=backend&action=benutzer">Benutzer</a></li>';
+                        <li><a href="#?page=backend&action=benutzer">Benutzer</a></li>
+                        <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 };
 
             }
