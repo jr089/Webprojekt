@@ -53,7 +53,7 @@
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
         session_start();
-        include "userdata.php";
+        include "dbconnect.php";
         /*$stmt = $db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email AND Passwort=:Passwort");
         $stmt->bindParam(":Rollen_ID", $Rollen_ID);
         */
