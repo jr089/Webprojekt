@@ -10,7 +10,7 @@ body {
     grid-column-gap: 10px;
     height: 95vh;
     margin: 3%;
-    font-family: 'Open Sans', 'sans-serif';
+    font-family: 'Roboto', sans-serif;
     background: linear-gradient(-90deg, royalblue, white, royalblue);
     background-size: 100%;
 }

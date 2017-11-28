@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Jukian Schreibwaren</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -54,9 +55,7 @@
         <?php
         session_start();
         include "dbconnect.php";
-        /*$stmt = $db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email AND Passwort=:Passwort");
-        $stmt->bindParam(":Rollen_ID", $Rollen_ID);
-        */
+
         $stmt=$db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email");
         $stmt->bindParam(":Email", $_SESSION["login"]);
 
@@ -110,12 +109,12 @@
                     include "account/index.php";
                     break;
                 default:
-                    include "start.php"; //was machen wir hiermit?
+
                     break;}}
 
         else
         {
-            include "start.php";     //und hiermit?
+
         }
         ?>
 
