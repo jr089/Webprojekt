@@ -54,7 +54,7 @@ else
     <div id="price">
         <div id="price-content">
 <?php
-echo $artikelname ."</br>" .$preis;
+echo $artikelnummer ."</br>" .$preis;
 ?>
         </div>
     </div>
