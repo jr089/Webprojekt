@@ -141,6 +141,7 @@ ul.breadcrumb li+li:before {
     color: black;
     content: "/\00a0";
 }
+
 /*--Artikelseite--*/
 .articleview{
     display: grid;

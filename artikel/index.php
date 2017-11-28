@@ -3,7 +3,7 @@
         include "./dbconnect.php";
         if (isset($_GET["an"]))
         {
-            $Artikelnummer=($_GET["an"]);
+            $Artikelnummer =($_GET["an"]);
 
             $stmt=$db->prepare("SELECT * FROM Artikel WHERE Artikelnummer=:Artikelnummer");
             $stmt->bindParam(":Name", $artikelname);
