@@ -27,14 +27,14 @@
 
     if (isset($_GET["page"]) ) {
         switch ($_GET["page"]) {
-            /*case "beitrag":
-            include "./system/beitrag/index.php";
-            break;*/
+            case "artikel":
+                include "artikel/index.php";
+                break;
         }
     }
     else
     {
-        include "./main.html";
+        include "./artikel/index.php";
     }
     ?>
 </article>

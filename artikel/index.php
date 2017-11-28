@@ -1,4 +1,17 @@
 <?php
+        session_start();
+        include "./dbconnect.php";
+        if (isset($_GET["an"]))
+        {
+            $Artikelnummer=($_GET["an"]);
+
+            $stmt=$db->prepare("SELECT * FROM Artikel WHERE Artikelnummer=:Artikelnummer");
+            $stmt->bindParam(":Name", $artikelname);
+            $stmt->bindParam(":Beschreibung", $beschreibung);
+            $stmt->bindParam(":EAN", $ean);
+            $stmt->bindParam(":Preis", $preis);
+            $stmt->execute();
+        }
 /*if (isset($_GET["action"]))
 {
 
@@ -40,7 +53,9 @@ else
     </div>
     <div id="price">
         <div id="price-content">
-
+<?php
+echo $artikelname ."</br>" .$preis;
+?>
         </div>
     </div>
     <div id="description">
