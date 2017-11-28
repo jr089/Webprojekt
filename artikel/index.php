@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET["action"]))
+/*if (isset($_GET["action"]))
 {
 
     switch ($_GET["action"]) {
@@ -31,3 +31,20 @@ else
 {
     echo "Seite nicht gefunden";
 }
+*/?>
+
+<div class="articleview">
+
+    <div id="picture">
+
+    </div>
+    <div id="price">
+        <div id="price-content">
+
+        </div>
+    </div>
+    <div id="description">
+
+    </div>
+
+</div>
