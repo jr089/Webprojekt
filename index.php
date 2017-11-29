@@ -34,7 +34,7 @@
     }
     else
     {
-        include "./artikel/index.php";
+        include "main.html";
     }
     ?>
 </article>
@@ -93,7 +93,7 @@
             }
         }
 
-
+/*
         if (isset($_GET["page"]) ) {
             switch ($_GET["page"]) {
                 case "artikel":
@@ -116,6 +116,7 @@
         {
 
         }
+*/
         ?>
 
 
