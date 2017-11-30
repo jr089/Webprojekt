@@ -30,6 +30,9 @@
             case "artikel":
                 include "artikel/index.php";
                 break;
+            case "kategorie":
+                include "kategorie/index.php";
+                break;
         }
     }
     else
@@ -45,16 +48,16 @@
 
     <!-- Sieht man immer, auch wenn man nicht eingeloggt ist -->
     <ul>
-        <li><a href="#?page=artikel&action=stifte">Stifte</a></li>
-        <li><a href="#?page=artikel&action=zeichnen">Zeichnen</a></li>
-        <li><a href="#?page=artikel&action=ordnung">Ordnung</a></li>
-        <li><a href="#?page=artikel&action=hefte">Hefte/Blöcke</a></li>
-        <li><a href="#?page=artikel&action=sonstiges">Sonstiges</a></li>
+        <li><a href="#?page=kategorie&action=stifte">Stifte</a></li>
+        <li><a href="#?page=kategorie&action=zeichnen">Zeichnen</a></li>
+        <li><a href="#?page=kategorie&action=ordnung">Ordnung</a></li>
+        <li><a href="#?page=kategorie&action=hefte">Hefte/Blöcke</a></li>
+        <li><a href="#?page=kategorie&action=sonstiges">Sonstiges</a></li>
 
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
-        session_start();
-        include "dbconnect.php";
+            session_start();
+            include_once "dbconnect.php";
 
         $stmt=$db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email");
         $stmt->bindParam(":Email", $_SESSION["login"]);
