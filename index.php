@@ -48,11 +48,11 @@
 
     <!-- Sieht man immer, auch wenn man nicht eingeloggt ist -->
     <ul>
-        <li><a href="#?page=kategorie&action=stifte">Stifte</a></li>
-        <li><a href="#?page=kategorie&action=zeichnen">Zeichnen</a></li>
-        <li><a href="#?page=kategorie&action=ordnung">Ordnung</a></li>
-        <li><a href="#?page=kategorie&action=hefte">Hefte/Blöcke</a></li>
-        <li><a href="#?page=kategorie&action=sonstiges">Sonstiges</a></li>
+        <li><a href="?page=kategorie&action=stifte">Stifte</a></li>
+        <li><a href="?page=kategorie&action=zeichnen">Zeichnen</a></li>
+        <li><a href="?page=kategorie&action=ordnung">Ordnung</a></li>
+        <li><a href="?page=kategorie&action=hefte">Hefte/Blöcke</a></li>
+        <li><a href="?page=kategorie&action=sonstiges">Sonstiges</a></li>
 
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php

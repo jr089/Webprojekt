@@ -27,13 +27,14 @@ if (isset($id)) {
     foreach ($results as $rowkategorie) {
         $artikelname = $rowkategorie['name'];
         $preis = $rowkategorie['preis'];
+        $artikelnummer = $rowkategorie ['artikelnummer'];
         ?>
     <li class="flex-item">
         <a href="#">
             <img src="#">
         </a>
         <div class="mini-beschreibung">
-            <a href="#">
+            <a href="?page=artikel&artikelnummer=<?php echo $artikelnummer?>">
                <?php echo $artikelname ?>
             </a>
             </br>
