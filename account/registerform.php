@@ -19,7 +19,7 @@ echo "<div class=\"form\">
         Dein Passwort:<br>
         <input type=\"Password\" name=\"Passwort\"><br><br>
         
-        Passwort wiederholenx:<br>
+        Passwort wiederholen:<br>
         <input type=\"Password\" name=\"Passwort2\"><br><br>
 
         <input type=\"submit\" value=\"Abschicken\">

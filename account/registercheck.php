@@ -10,7 +10,7 @@ if (isset($_POST["Name"]) AND isset($_POST["Vorname"]) AND isset($_POST["Email"]
     $stmt->bindParam(":Passwort", $_POST["Passwort"]);
 
     if (!$stmt->execute()) {
-        echo "Datenbank-Fehlerx (registrieren)";
+        echo "Datenbank-Fehler (registrieren)";
         $arr = $stmt->errorInfo();
         print_r($arr);
         die();
