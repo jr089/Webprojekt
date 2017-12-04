@@ -73,6 +73,7 @@
         if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
             echo '<li><a href="account/index.php?page=account&action=loginform">Login</a></li>';
+            echo '<li><a href="account/index.php?page=account&action=registrieren">Registrieren</a></li>';
         }
         else {
             if (isset($_SESSION["login"])) {
