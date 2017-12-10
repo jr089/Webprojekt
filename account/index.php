@@ -1,10 +1,9 @@
 <?php
 if (isset($_GET["action"]))
 {
-
     switch ($_GET["action"]) {
         case "loginform":
-            include "loginform.php";
+            include "./account/loginform.php";
             break;
         case "registrieren":
             include "registrieren.php";
@@ -13,10 +12,7 @@ if (isset($_GET["action"]))
             echo "Seite nicht gefunden";
             die();
             break;
-
-
     }
-
 }
 else
 {

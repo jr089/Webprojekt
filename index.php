@@ -5,6 +5,7 @@
     <title>Jukian Schreibwaren</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <? session_start(); ?>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 </div>
 <header id="pageHeader">
     <ul>
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
         <li><a href="#">Page 1</a></li>
         <li><a href="#">Page 2</a></li>
     </ul>
@@ -32,6 +33,9 @@
                 break;
             case "kategorie":
                 include "kategorie/index.php";
+                break;
+            case "account":
+                include "account/index.php";
                 break;
         }
     }
@@ -56,7 +60,6 @@
 
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
-            session_start();
             include_once "dbconnect.php";
 
         $stmt=$db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email");
@@ -72,8 +75,8 @@
 
         if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            echo '<li><a href="account/index.php?page=account&action=loginform">Login</a></li>';
-            echo '<li><a href="account/index.php?page=account&action=registrieren">Registrieren</a></li>';
+            echo '<li><a href="?page=account&action=loginform">Login</a></li>';
+            echo '<li><a href="?page=account&action=registrieren">Registrieren</a></li>';
         }
         else {
             if (isset($_SESSION["login"])) {

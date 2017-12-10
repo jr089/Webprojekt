@@ -33,4 +33,6 @@ if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
 else
 {
     echo "Fehler- zu wenig Parameter";
+    echo $_POST["Email"];
+    echo $_POST["Passwort"];
 }
