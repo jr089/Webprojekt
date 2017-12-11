@@ -30,18 +30,11 @@ echo "Preis: " .$results['preis'];
         ?>
         </br></br>
 <form action="./warenkorb/temp.php" method="post">
-<input hidden name="artikelid" value="<?php $results['artikelnummer']?>">
+<input type="hidden" name="artikelid" value="<?php echo $artikelnummer?>">
     Menge:
-    <input type="number" name="warenkorb" value="1" min="1">
+    <input type="number" name="anzahl" value="1" min="1">
     <input type="submit"  value="In den Warenkorb">
 </form>
     </div>
 
 </div>
-<?php
-
-if (isset($_POST['Submit'])) {
-    $_SESSION['warenkorb'] = $_POST['warenkorb'];
-}
-echo $_SESSION['warenkorb'];
-?>

@@ -1,5 +1,12 @@
 <?php
 session_start();
-$warenkorb = $_POST['warenkorb'];
+$anzahl = $_POST['anzahl'];
+$artikelid = $_POST['artikelid'];
 
-echo $warenkorb;
+echo $anzahl;
+echo $artikelid;
+
+$_SESSION['warenkorb'][] = array("$anzahl", "$artikelid");
+
+print_r($_SESSION['warenkorb']);
+?>
