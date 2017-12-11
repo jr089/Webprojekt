@@ -5,6 +5,7 @@
     <title>Jukian Schreibwaren</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <?php session_start();?>
 </head>
 
 <body>
