@@ -73,7 +73,7 @@
         if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
             echo '<li><a href="account/index.php?page=account&action=loginform">Login</a></li>';
-            echo '<li><a href="account/index.php?page=account&action=registrieren">Registrieren</a></li>';
+            echo '<li><a href="account/index.php?page=account&action=registerform">Registrieren</a></li>';
         }
         else {
             if (isset($_SESSION["login"])) {
@@ -88,9 +88,9 @@
 
                 elseif ($row["Rollen_ID"] == 2) {                //Admin eingeloggt -> kann Backend sehen & bearbeiten
                     echo '
-                        <li><a href="#?page=backend&action=bestellungen">Bestellungen</a></li>
-                        <li><a href="#?page=backend&action=artikel">Artikel</a></li>
-                        <li><a href="#?page=backend&action=benutzer">Benutzer</a></li>
+                        <li><a href="backend/bestellungen.php?page=backend&action=bestellungen">Bestellungen</a></li>
+                        <li><a href="backend/artikel.php?page=backend&action=artikel">Artikel</a></li>
+                        <li><a href="backend/benutzer.php?page=backend&action=benutzer">Benutzer</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 };
 
