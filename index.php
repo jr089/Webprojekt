@@ -33,6 +33,9 @@
             case "kategorie":
                 include "kategorie/index.php";
                 break;
+            case "account":
+                include "account/index.php";
+                break;
         }
     }
     else
@@ -72,7 +75,7 @@
 
         if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            echo '<li><a href="account/index.php?page=account&action=loginform">Login</a></li>';
+            echo '<li><a href="?page=account&action=loginform">Login</a></li>';
             echo '<li><a href="account/index.php?page=account&action=registerform">Registrieren</a></li>';
         }
         else {
