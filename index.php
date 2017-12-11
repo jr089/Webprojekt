@@ -13,9 +13,9 @@
 </div>
 <header id="pageHeader">
     <ul>
-        <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="#">Hilfe</a></li>
-        <li><a href="#">Warenkorb</a></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
     </ul>
     <form id="headersearch">
         <input type="text" placeholder="Suche">

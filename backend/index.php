@@ -1,7 +1,6 @@
 <?php
 if (isset($_GET["action"]))
 {
-
     switch ($_GET["action"]) {
         case "bestellungen":
             include "bestellungen.php";
@@ -16,8 +15,6 @@ if (isset($_GET["action"]))
             echo "Seite nicht gefunden";
             die();
             break;
-
-
     }
 
 }
