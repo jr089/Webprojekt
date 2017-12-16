@@ -133,9 +133,9 @@
 <!-- Fußleiste -->
 <footer id="pageFooter">
     <ul class="breadcrumb">
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="footer/impressum.php?page=footer&action=impressum">Impressum</a></li>
+        <li><a href="footer/datenschutz.php?page=footer&action=datenschutz">Datenschutz</a></li>
+        <li><a href="footer/kontakt.php?page=footer&action=kontakt">Kontakt</a></li>
     </ul>
 </footer>
 
