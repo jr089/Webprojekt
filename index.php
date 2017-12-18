@@ -37,6 +37,9 @@
             case "account":
                 include "account/index.php";
                 break;
+            case "backend":
+                include "backend/index.php";
+                break;
         }
     }
     else
@@ -94,7 +97,7 @@
                     echo '
                         <li><a href="backend/bestellungen.php?page=backend&action=bestellungen">Bestellungen</a></li>
                         <li><a href="backend/artikel.php?page=backend&action=artikel">Artikel</a></li>
-                        <li><a href="backend/benutzer.php?page=backend&action=benutzer">Benutzer</a></li>
+                        <li><a href="?page=backend&action=benutzer">Benutzer</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 };
 
