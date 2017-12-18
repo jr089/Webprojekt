@@ -9,7 +9,7 @@
     </head>';*/
 
 include ('../dbconnect.php');
-
+echo '<a href=artikelneu.php>Neuen Artikel anlegen</a>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();
