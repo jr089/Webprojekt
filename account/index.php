@@ -5,8 +5,8 @@ if (isset($_GET["action"]))
         case "loginform":
             include "./account/loginform.php";
             break;
-        case "registrieren":
-            include "registrieren.php";
+        case "registerform":
+            include "registerform.php";
             break;
         default:
             echo "Seite nicht gefunden";
@@ -16,5 +16,4 @@ if (isset($_GET["action"]))
 }
 else
 {
-    echo "Seite nicht gefunden";
-}
+    echo "Seite nicht gefunden";}

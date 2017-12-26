@@ -8,8 +8,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>';*/
 
-include ('../dbconnect.php');
-echo '<a href=artikelneu.php>Neuen Artikel anlegen</a>';
+include ('./dbconnect.php');
+echo '<a href=artikelneu.php>Neuen Artikel anlegen</a><br><br>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();

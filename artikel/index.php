@@ -1,6 +1,6 @@
 <?php
         session_start();
-        include "././dbconnect.php";
+        include "./../dbconnect.php";
         if (isset($_GET['artikelnummer']))
         {
             $artikelnummer = ($_GET['artikelnummer']);
@@ -29,7 +29,7 @@ echo "Preis: " .$results['preis'];
         echo $results['beschreibung'];
         ?>
         </br></br>
-<form action="./warenkorb/temp.php" method="post">
+<form action="../warenkorb/temp.php" method="post">
 <input type="hidden" name="artikelid" value="<?php echo $artikelnummer?>">
     Menge:
     <input type="number" name="anzahl" value="1" min="1">

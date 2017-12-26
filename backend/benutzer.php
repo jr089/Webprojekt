@@ -8,9 +8,9 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>';*/
 
-include ('../dbconnect.php');
+include ('./dbconnect.php');
 
-$stmt = $db->query("SELECT * FROM nutzer");
+$stmt = $db->query("SELECT * FROM Nutzer");
 $stmt->execute();
 $results = $stmt->fetchAll();
 
@@ -21,14 +21,17 @@ foreach ($results as $row) {
     $name = $row['name'];
     $vorname = $row ['vorname'];
     $email = $row ['email'];
-    $adresse = $row ['adresse'];
+    $strasse = $row ['strasse'];
+    $hausnr = $row ['hausnr'];
+    $plz = $row ['plz'];
+    $ort = $row ['ort'];
     $passwort = $row ['passwort'];
 
     echo '<li class="flex-item">
 
         <div class="mini-beschreibung">
-            <a href="nutzerchangeform.php?nutzer_id='.        $nutzer_id .'">';
-    echo $name." ".$vorname."<br>".$email."<br>".$adresse."<br>".$passwort;
+            <a href="benutzerchangeform.php?nutzer_id='.        $nutzer_id .'">';
+    echo $name." ".$vorname."<br>".$email."<br>".$strasse."<br>".$hausnr."<br>".$plz."<br>".$ort."<br>".$passwort;
     echo '</a>
            </div>
         </li>

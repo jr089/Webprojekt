@@ -2,15 +2,16 @@
 
 include ("../dbconnect.php");
 
-$name = $_POST ["name"];
+$name = $_POST["name"];
 $preis = $_POST["preis"];
 $beschreibung = $_POST["beschreibung"];
-$ean = $_POST ["ean"];
-$bestand = $_POST ["bestand"];
+$ean = $_POST["ean"];
+$bestand = $_POST["bestand"];
+$kategorie = $_POST["kategorie_id"];
 
-if (!empty($name) && !empty($preis) && !empty($beschreibung) &&!empty($ean) &&!empty($bestand)) {
-    $stmt = $db->query("INSERT INTO artikel SET artikelnummer= NULL , name=  '$name' , preis=  '$preis' , beschreibung= ' $beschreibung ',  ean= '$ean ', bestand= ' $bestand'");
-    $stmt->execute();
+if (!empty($name) && !empty($preis) && !empty($beschreibung) &&!empty($ean) &&!empty($bestand) &&!empty($kategorie)) {
+    $sql= "INSERT INTO artikel SET artikelnummer='NULL',  name='".$name."', preis='".$preis."', beschreibung='".$beschreibung."',  ean='".$ean."', bestand='".$bestand."', kategorie_id='".$kategorie."'";
+    $stmt = $db->query($sql);
     header("Location: artikel.php");
 
 } else {

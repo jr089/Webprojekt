@@ -1,26 +1,35 @@
 <?php
 
-include("../dbconnect.php");
+include("./dbconnect.php");
 echo "<div class=\"form\">
 
-    <form action=\"registercheck.php\" method=\"post\">
+    <form action=\"./account/registercheck.php\" method=\"post\">
         Name:<br>
-        <input type=\"Text\" name=\"Name\"><br><br>
+        <input type=\"Text\" name=\"name\"><br><br>
 
         Vorname:<br>
-        <input type=\"Text\" name=\"Vorname\"><br><br>
+        <input type=\"Text\" name=\"vorname\"><br><br>
 
         E-Mail:<br>
-        <input type=\"Email\" name=\"Email\"><br><br>
+        <input type=\"Email\" name=\"email\"><br><br>
 
-        Adresse:<br>
-        <input type=\"Text\" name=\"Adresse\"><br><br>
+        Straße:<br>
+        <input type=\"Text\" name=\"strasse\"><br><br>
+        
+        Hausnummer:<br>
+        <input type=\"Text\" name=\"hausnr\"><br><br>
+        
+        PLZ:<br>
+        <input type=\"Text\" name=\"plz\"><br><br>
+        
+        Ort:<br>
+        <input type=\"Text\" name=\"ort\"><br><br>
 
         Dein Passwort:<br>
-        <input type=\"Password\" name=\"Passwort\"><br><br>
+        <input type=\"Password\" name=\"passwort\"><br><br>
         
         Passwort wiederholen:<br>
-        <input type=\"Password\" name=\"Passwort2\"><br><br>
+        <input type=\"Password\" name=\"passwort2\"><br><br>
 
         <input type=\"submit\" value=\"Abschicken\">
     </form>

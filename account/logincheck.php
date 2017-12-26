@@ -1,20 +1,18 @@
 <?php
 session_start();
 include "../dbconnect.php";
-if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
+if (isset($_POST["email"]) AND isset($_POST["passwort"]))
 {
-
-    $passwort=($_POST["Passwort"]);
-    $stmt=$db->prepare("SELECT * FROM Nutzer WHERE Email=:Email AND Passwort=:Passwort");
-    $stmt->bindParam(":Email", $_POST["Email"]);
-    $stmt->bindParam(":Passwort", $passwort );
+    $passwort=($_POST["passwort"]);
+    $stmt=$db->prepare("SELECT * FROM Nutzer WHERE email=:email AND passwort=:passwort");
+    $stmt->bindParam(":email", $_POST["email"]);
+    $stmt->bindParam(":passwort", $passwort );
     if(!$stmt->execute()) {
         echo "Datenbank-Fehler (S01)";
         $arr = $stmt->errorInfo();
         print_r($arr);
         die();
     }
-
     if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
     {
         echo "Nutzer nicht gefunden";
@@ -22,17 +20,15 @@ if (isset($_POST["Email"]) AND isset($_POST["Passwort"]))
     }
     else
     {
-        $_SESSION["Email"]=$row["Email"];
-        $_SESSION["Name"]=$row["Name"];
-        $_SESSION["login"] = $row["Email"];
+        $_SESSION["email"]=$row["email"];
+        $_SESSION["name"]=$row["name"];
+        $_SESSION["login"] = $row["email"];
         header ("Location: ../index.php");
     }
-
-
 }
 else
 {
     echo "Fehler- zu wenig Parameter";
-    echo $_POST["Email"];
-    echo $_POST["Passwort"];
+    echo $_POST["email"];
+    echo $_POST["passwort"];
 }
