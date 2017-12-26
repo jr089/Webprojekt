@@ -14,7 +14,7 @@
 </div>
 <header id="pageHeader">
     <ul>
-        <li class="active"><a href="index.php">Home</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Hilfe</a></li>
         <li><a href="#">Warenkorb</a></li>
     </ul>
@@ -25,6 +25,7 @@
 </header>
 <article id="mainArticle">
     <?php
+
     if (isset($_GET["page"]) ) {
         switch ($_GET["page"]) {
             case "artikel":
@@ -60,62 +61,73 @@
         <li><a href="?page=kategorie&action=hefte">Hefte/Blöcke</a></li>
         <li><a href="?page=kategorie&action=sonstiges">Sonstiges</a></li>
 
-        <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
+<!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
-        session_start();
-        include_once "dbconnect.php";
-        $stmt=$db->prepare("SELECT rollen_id FROM Nutzer WHERE email=:email");
-        $stmt->bindParam(":email", $_SESSION["login"]);
+            session_start();
+            include_once "dbconnect.php";
+
+        $stmt=$db->prepare("SELECT Rollen_ID FROM Nutzer WHERE Email=:Email");
+        $stmt->bindParam(":Email", $_SESSION["login"]);
+
+
         if(!$stmt->execute()) {
             echo "Datenbank-Fehler (S01)";
             $arr = $stmt->errorInfo();
             print_r($arr);
             die();
         }
+
         if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
             echo '<li><a href="?page=account&action=loginform">Login</a></li>';
-            echo '<li><a href="?page=account&action=registerform">Registrieren</a></li>';
+            echo '<li><a href="account/index.php?page=account&action=registerform">Registrieren</a></li>';
         }
         else {
             if (isset($_SESSION["login"])) {
-                if ($row["rollen_id"] == 1) {
+                if ($row["Rollen_ID"] == 1) {
+
                     //Benutzer eingeloggt
                     echo '
-                        <li><a href="?page=profil&action=ansehen">Bestellungen ansehen</a></li>
-                        <li><a href="?page=profil&action=verwalten">Profil verwalten</a></li>
+                        <li><a href="#?page=profil&action=ansehen">Bestellungen ansehen</a></li>
+                        <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 }
-                elseif ($row["rollen_id"] == 2) {                //Admin eingeloggt -> kann Backend sehen & bearbeiten
+
+                elseif ($row["Rollen_ID"] == 2) {                //Admin eingeloggt -> kann Backend sehen & bearbeiten
                     echo '
-                        <li><a href="?page=backend&action=bestellungen">Bestellungen</a></li>
-                        <li><a href="?page=backend&action=artikel">Artikel</a></li>
+                        <li><a href="backend/bestellungen.php?page=backend&action=bestellungen">Bestellungen</a></li>
+                        <li><a href="backend/artikel.php?page=backend&action=artikel">Artikel</a></li>
                         <li><a href="?page=backend&action=benutzer">Benutzer</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 };
+
             }
         }
-        /*
-                if (isset($_GET["page"]) ) {
-                    switch ($_GET["page"]) {
-                        case "artikel":
-                            include "artikel/index.php";
-                            break;
-                        case "profil":
-                            include "profil/index.php";
-                            break;
-                        case "backend":
-                            include "backend/index.php";
-                            break;
-                        case "account":
-                            include "account/index.php";
-                            break;
-                        default:
-                            break;}}
-                else
-                {
-                }
-        */
+
+/*
+        if (isset($_GET["page"]) ) {
+            switch ($_GET["page"]) {
+                case "artikel":
+                    include "artikel/index.php";
+                    break;
+                case "profil":
+                    include "profil/index.php";
+                    break;
+                case "backend":
+                    include "backend/index.php";
+                    break;
+                case "account":
+                    include "account/index.php";
+                    break;
+                default:
+
+                    break;}}
+
+        else
+        {
+
+        }
+*/
         ?>
 
 

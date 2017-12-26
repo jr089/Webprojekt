@@ -11,6 +11,9 @@ if (isset($_GET["action"]))
         case "benutzer":
             include "benutzer.php";
             break;
+        case "changeu":
+            include "benutzerchangeform.php";
+            break;
         default:
             echo "Seite nicht gefunden";
             die();

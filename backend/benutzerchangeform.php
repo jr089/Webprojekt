@@ -1,5 +1,5 @@
 <?php
-$nutzer_id=$_GET ["Nutzer_ID"];
+$nutzer_id=$_GET ["nutzer_id"];
 
 include ('./dbconnect.php');
 $stmt = $db->query("SELECT * FROM Nutzer WHERE Nutzer_ID=".$nutzer_id);
@@ -16,7 +16,7 @@ foreach ($results as $row) {
         <input type="text" name="vorname" value="' . $row["Vorname"] . '">
         <input type="text" name="email" value="' . $row["Email"] . '">
         <input type="text" name="adresse" value="' . $row["Adresse"] . '">
-        <input type="text" name="passwort" value="' . $row["Passwort"] . '">
+        <input type="password" name="passwort" value="' . $row["Passwort"] . '">
         <input type="submit">
     </form>
 

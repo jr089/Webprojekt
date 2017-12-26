@@ -17,21 +17,18 @@ $results = $stmt->fetchAll();
 echo '<ul class="flex-container">';
 
 foreach ($results as $row) {
-    $nutzer_id = $row['nutzer_id'];
-    $name = $row['name'];
-    $vorname = $row ['vorname'];
-    $email = $row ['email'];
-    $strasse = $row ['strasse'];
-    $hausnr = $row ['hausnr'];
-    $plz = $row ['plz'];
-    $ort = $row ['ort'];
-    $passwort = $row ['passwort'];
+    $nutzer_id = $row['Nutzer_ID'];
+    $name = $row['Name'];
+    $vorname = $row['Vorname'];
+    $email = $row['Email'];
+    $adresse = $row['Adresse'];
+    $passwort = $row['Passwort'];
 
     echo '<li class="flex-item">
 
         <div class="mini-beschreibung">
-            <a href="benutzerchangeform.php?nutzer_id='.        $nutzer_id .'">';
-    echo $name." ".$vorname."<br>".$email."<br>".$strasse."<br>".$hausnr."<br>".$plz."<br>".$ort."<br>".$passwort;
+            <a href="?page=backend&action=changeu&nutzer_id='.$nutzer_id.'">';
+    echo $name." ".$vorname."<br>".$email."<br>".$adresse."<br>".$passwort;
     echo '</a>
            </div>
         </li>
