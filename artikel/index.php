@@ -1,6 +1,6 @@
 <?php
         session_start();
-        include "./../dbconnect.php";
+        include "././dbconnect.php";
         if (isset($_GET['artikelnummer']))
         {
             $artikelnummer = ($_GET['artikelnummer']);
@@ -13,7 +13,7 @@
 <div class="articleview">
 
     <div id="picture">
-
+<img src="./artikel/artikelbilder/<?php echo $results['bildpfad'];?>">
     </div>
     <div id="price">
         <div id="price-content">
@@ -29,7 +29,7 @@ echo "Preis: " .$results['preis'];
         echo $results['beschreibung'];
         ?>
         </br></br>
-<form action="../warenkorb/temp.php" method="post">
+<form action="./warenkorb/add.php" method="post">
 <input type="hidden" name="artikelid" value="<?php echo $artikelnummer?>">
     Menge:
     <input type="number" name="anzahl" value="1" min="1">

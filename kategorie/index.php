@@ -28,10 +28,11 @@ if (isset($id)) {
         $artikelname = $rowkategorie['name'];
         $preis = $rowkategorie['preis'];
         $artikelnummer = $rowkategorie ['artikelnummer'];
+        $pfad = $rowkategorie['bildpfad'];
         ?>
     <li class="flex-item">
         <a href="#">
-            <img src="#">
+            <img src="./artikel/artikelbilder/<?php echo $pfad;?>">
         </a>
         <div class="mini-beschreibung">
             <a href="?page=artikel&artikelnummer=<?php echo $artikelnummer?>">

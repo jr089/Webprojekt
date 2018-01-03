@@ -173,6 +173,13 @@ ul.breadcrumb li+li:before {
 #description {
     grid-area: description;
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
 /* Stack the layout on small devices/viewports. /
 @media all and (max-width: 575px) {
     body {

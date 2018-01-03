@@ -5,6 +5,7 @@
     <title>Jukian Schreibwaren</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php session_start();?>
 </head>
 
@@ -14,9 +15,9 @@
 </div>
 <header id="pageHeader">
     <ul>
-        <li class="active"><a href="index.php">Home</a></li>
+        <li class="active"><a href="?">Home</a></li>
         <li><a href="#">Hilfe</a></li>
-        <li><a href="#">Warenkorb</a></li>
+        <li><a href="?page=warenkorb">Warenkorb <i class="material-icons">shopping_cart</i></a></li>
     </ul>
     <form id="headersearch">
         <input type="text" placeholder="Suche">
@@ -40,11 +41,17 @@
             case "backend":
                 include "backend/index.php";
                 break;
+            case "warenkorb":
+                include "warenkorb/index.php";
+                break;
+            case "overview":
+                include "kasse/overview.php";
+                break;
         }
     }
     else
     {
-        include "main.html";
+        include "main.php";
     }
     ?>
 </article>
@@ -63,7 +70,6 @@
 
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
-            session_start();
             include_once "dbconnect.php";
 
         $stmt=$db->prepare("SELECT rollen_id FROM Nutzer WHERE email=:email");
