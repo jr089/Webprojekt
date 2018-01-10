@@ -1,15 +1,9 @@
 <?php
 
-/*echo'
-    <head>
-        <meta charset="UTF-8">
-        <title>Jukian Schreibwaren</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </head>';*/
+
 
 include ('./dbconnect.php');
-echo '<a href=artikelneu.php>Neuen Artikel anlegen</a><br><br>';
+echo '<a href=backend/artikelneu.php>Neuen Artikel anlegen</a><br><br>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();

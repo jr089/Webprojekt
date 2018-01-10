@@ -6,8 +6,8 @@ if (isset($_GET["action"]))
         case "ansehen":
             include "ansehen.php";
             break;
-        case "verwalten":
-            include "verwalten.php";
+        case "profilform":
+            include "profilform.php";
             break;
         default:
             echo "Seite nicht gefunden";

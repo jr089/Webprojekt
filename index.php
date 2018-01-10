@@ -47,6 +47,9 @@
             case "overview":
                 include "kasse/overview.php";
                 break;
+            case "profil":
+                include "profil/index.php";
+                break;
         }
     }
     else
@@ -95,7 +98,7 @@
                     //Benutzer eingeloggt
                     echo '
                         <li><a href="#?page=profil&action=ansehen">Bestellungen ansehen</a></li>
-                        <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>
+                        <li><a href="?page=profil&action=profilform">Profil verwalten</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 }
 
@@ -110,30 +113,6 @@
             }
         }
 
-/*
-        if (isset($_GET["page"]) ) {
-            switch ($_GET["page"]) {
-                case "artikel":
-                    include "artikel/index.php";
-                    break;
-                case "profil":
-                    include "profil/index.php";
-                    break;
-                case "backend":
-                    include "backend/index.php";
-                    break;
-                case "account":
-                    include "account/index.php";
-                    break;
-                default:
-
-                    break;}}
-
-        else
-        {
-
-        }
-*/
         ?>
 
 
