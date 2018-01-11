@@ -1,6 +1,6 @@
 <?php
         session_start();
-        include "././dbconnect.php";
+        include "./dbconnect.php";
         if (isset($_GET['artikelnummer']))
         {
             $artikelnummer = ($_GET['artikelnummer']);
@@ -19,7 +19,7 @@
         <div id="price-content">
 <?php
 echo $results['name'] ."</br></br>";
-echo "Preis: " .$results['preis'];
+echo "Preis: " .$results['preis']."€";
 ?>
         </div>
     </div>

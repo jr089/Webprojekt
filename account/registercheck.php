@@ -4,7 +4,7 @@ include("../dbconnect.php");
 if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]) AND isset($_POST["strasse"]) AND isset($_POST["hausnr"]) AND isset($_POST["plz"]) AND isset($_POST["ort"])AND isset($_POST["passwort"]) AND isset($_POST["passwort2"])) {
     if (!empty($_POST["name"])&&!empty($_POST["vorname"])&&!empty($_POST["email"])&&!empty($_POST["strasse"])&&!empty($_POST["hausnr"])&&!empty($_POST["plz"])&&!empty($_POST["ort"])&&!empty($_POST["passwort"])&&!empty($_POST["passwort2"])) {
         if ($_POST["passwort"] == $_POST["passwort2"]) {
-            $stmt = $db->prepare("INSERT INTO Nutzer (nutzer_id, Name, vorname, email, strasse, hausnr, plz, ort, passwort, rollen_id) VALUES ('', :name, :vorname, :email, :strasse, :hausnr, :plz, :ort, :passwort, '2')");
+            $stmt = $db->prepare("INSERT INTO Nutzer (nutzer_id, Name, vorname, email, strasse, hausnr, plz, ort, passwort, rollen_id) VALUES ('', :name, :vorname, :email, :strasse, :hausnr, :plz, :ort, :passwort, '1')");
             $stmt->bindParam(":name", $_POST["name"]);
             $stmt->bindParam(":vorname", $_POST["vorname"]);
             $stmt->bindParam(":email", $_POST["email"]);
