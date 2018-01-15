@@ -5,6 +5,7 @@ if (isset($_SESSION['warenkorb']))
 {
     ?>
     <div>
+        <form action="./kasse/checkout.php" method="post">
             <table>
                 <tr>
                     <th>Artikel</th>
@@ -23,11 +24,11 @@ if (isset($_SESSION['warenkorb']))
                         <td><?=$results['preis'];?></td>
                         <td><?=$wk['anzahl'];?></td>
                     </tr>
-            </table>
                     <?php } ?>
-        <form action="./kasse/checkout.php" method="post">
-            </br>
+            </table>
+            </br></br>
             <fieldset>
+                <legend> Zahlungsart </legend>
                 <input type="radio" id="vk" name="zahlmethode" value="vorkasse" required>
                 <label for="mc"> Vorkasse</label>
                 <input type="radio" id="nn" name="zahlmethode" value="nachnahme">
@@ -35,6 +36,7 @@ if (isset($_SESSION['warenkorb']))
             </fieldset>
             </br>
             <fieldset>
+                <legend> Rechtliches </legend>
                 <input type="radio" id="agb" name="agb" value="agb" required>
                 <label for="mc"> Hiermit akzeptieren Sie die allgemeinen AGBS und unsere Datenschutzbestimmungen</label>
             </fieldset>

@@ -1,10 +1,12 @@
 <?php
 if (isset($_GET["action"]))
 {
-
     switch ($_GET["action"]) {
         case "ansehen":
-            include "ansehen.php";
+            include "bestellungenall.php";
+            break;
+        case "bestellung":
+            include "bestellung.php";
             break;
         case "verwalten":
             include "verwalten.php";
@@ -13,10 +15,7 @@ if (isset($_GET["action"]))
             echo "Seite nicht gefunden";
             die();
             break;
-
-
     }
-
 }
 else
 {

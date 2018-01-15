@@ -19,7 +19,7 @@ if (isset($_GET['action']))
             break;
     }
 if (isset($id)) {
-    $stmt = $db->query("SELECT * FROM artikel WHERE kategorie_id=" . $id);
+    $stmt = $db->query("SELECT * FROM artikel WHERE kategorie_id=" .$id);
     $results = $stmt->fetchAll();
     ?>
 <ul class="flex-container">
@@ -31,8 +31,8 @@ if (isset($id)) {
         $pfad = $rowkategorie['bildpfad'];
         ?>
     <li class="flex-item">
-        <a href="#">
-            <img src="./artikel/artikelbilder/<?php echo $pfad;?>">
+        <a href="?page=artikel&artikelnummer=<?php echo $artikelnummer?>">
+            <img src="./artikel/artikelbilder/<?=$pfad;?>">
         </a>
         <div class="mini-beschreibung">
             <a href="?page=artikel&artikelnummer=<?php echo $artikelnummer?>">

@@ -15,9 +15,12 @@ if (isset($_SESSION['warenkorb']))
         <th>Löschen</th>
     </tr>
 <?php
+$preisgesammt = 0;
 foreach ($_SESSION['warenkorb'] as $key => $wk){
     $stmt = $db->query("SELECT * FROM artikel WHERE artikelnummer=".$wk['artikelid']);
     $results = $stmt->fetch();
+    $add = ($results['preis'] * $wk['anzahl']);
+    $preisgesammt = $preisgesammt + $add;
 ?>
     <tr>
         <td><?=$key;?></td>
@@ -28,13 +31,15 @@ foreach ($_SESSION['warenkorb'] as $key => $wk){
         <td><?=$wk['anzahl'];?></td>
         <td><input type="checkbox" name="delete[]" value="<?=$key;?>"></td>
     </tr>
-<?php }/*echo $results['name'] ."</br></br>";
-    echo $results['preis'] ."</br></br>";*/?>
+<?php } ?>
     </table>
+        <?php echo "Der Gesamtbetrag des Warenkorbs beträgt momentan: " .$preisgesammt ."€"; ?>
+        </br>
         <input type="submit" value="aktualisieren">
     </form>
+
 </div>
-    <form action="?page=overview" method="post">
+    <form action="?page=kasse&action=overview" method="post">
         <input type="submit" value="Kasse">
     </form>
 <?php }

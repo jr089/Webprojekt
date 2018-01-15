@@ -9,7 +9,7 @@
     </head>';*/
 
 include ('./dbconnect.php');
-echo '<a href=artikelneu.php>Neuen Artikel anlegen</a><br><br>';
+echo '<a href=backend/artikelneu.php>Neuen Artikel anlegen</a><br><br>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();
@@ -24,7 +24,7 @@ echo '<ul class="flex-container">';
         echo '<li class="flex-item">
 
         <div class="mini-beschreibung">
-            <a href="artikelchangeform.php?artikelnummer='.        $artikelnummer .'">';
+            <a href="backend/artikelchangeform.php?artikelnummer='.        $artikelnummer .'">';
         echo $artikelname."<br>".$preis." €";
         echo '</a>
            </div>

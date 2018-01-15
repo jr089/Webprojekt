@@ -23,6 +23,7 @@ if (isset($_POST["email"]) AND isset($_POST["passwort"]))
         $_SESSION["email"]=$row["email"];
         $_SESSION["name"]=$row["name"];
         $_SESSION["login"] = $row["email"];
+        $_SESSION["nutzerid"] = $row["nutzer_id"];
         header ("Location: ../index.php");
     }
 }

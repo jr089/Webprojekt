@@ -44,8 +44,11 @@
             case "warenkorb":
                 include "warenkorb/index.php";
                 break;
-            case "overview":
-                include "kasse/overview.php";
+            case "kasse":
+                include "kasse/index.php";
+                break;
+            case "profil":
+                include "profil/index.php";
                 break;
         }
     }
@@ -62,11 +65,12 @@
 
     <!-- Sieht man immer, auch wenn man nicht eingeloggt ist -->
     <ul>
+        <li>Kategorien</li>
         <li><a href="?page=kategorie&action=stifte">Stifte</a></li>
         <li><a href="?page=kategorie&action=zeichnen">Zeichnen</a></li>
         <li><a href="?page=kategorie&action=ordnung">Ordnung</a></li>
         <li><a href="?page=kategorie&action=hefte">Hefte/Blöcke</a></li>
-        <li><a href="?page=kategorie&action=sonstiges">Sonstiges</a></li>
+        <li><a href="?page=kategorie&action=sonstiges">Sonstiges</a></li> <br>
 
 <!-- Ist ein Benutzer oder ein Admin eingeloggt?-->
         <?php
@@ -94,7 +98,7 @@
 
                     //Benutzer eingeloggt
                     echo '
-                        <li><a href="#?page=profil&action=ansehen">Bestellungen ansehen</a></li>
+                        <li><a href="?page=profil&action=ansehen">Bestellungen ansehen</a></li>
                         <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 }

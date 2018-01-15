@@ -1,9 +1,37 @@
 <?php
 session_start();
-if((!isset($_POST['zahlmethode'])) || (!isset($_POST['agb']))){
-echo "AGB oder Zahlungsart nicht angegeben";
+include "../dbconnect.php";
+//check ob eingeloggt
+if (isset($_SESSION['login'])) {
+    //doppelter check ob eingelogt
+    if ((!isset($_POST['zahlmethode'])) || (!isset($_POST['agb']))) {
+        echo "AGB oder Zahlungsart nicht angegeben";
+    }
+    else {
+        //Prüfen und erweitern der aktuell höchsten Bestellnummer
+        $sql = "SELECT MAX(bestellnummer) + 1 FROM bestellungen";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $newbn = $stmt->fetchColumn();
+        echo $newbn;
+        //Einfügen der Bestellungen in die Datenbank
+        foreach ($_SESSION['warenkorb'] as $key => $wk) {
+            $nutzerid = $_SESSION['nutzerid'];
+            $artikelid = $wk['artikelid'];
+            $anzahl = $wk['anzahl'];
+            $zahlmethode = $_POST['zahlmethode'];
+            echo $nutzerid;
+            echo $artikelid;
+            echo $anzahl;
+            $sql = "INSERT INTO bestellungen (bestellnummer, kunde, artikel, anzahl, datum, zahlungsart)
+                    VALUES ('$newbn', '$nutzerid', '$artikelid', '$anzahl', NOW(), '$zahlmethode')";
+            $db->exec($sql);
+        }
+        //include "./mail.php";
+        header('Location: ../index.php?page=kasse&action=erfolg');
+    }
 }
 else{
-    echo "gut";
+   echo "Bitte vorher einloggen!";
 }
 ?>

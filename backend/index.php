@@ -3,7 +3,10 @@ if (isset($_GET["action"]))
 {
     switch ($_GET["action"]) {
         case "bestellungen":
-            include "bestellungen.php";
+            include "kundenbestellungen.php";
+            break;
+        case "bestellung":
+            include "kundenbestellung.php";
             break;
         case "artikel":
             include "artikel.php";
