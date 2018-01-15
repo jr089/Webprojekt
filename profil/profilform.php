@@ -12,13 +12,25 @@ foreach ($results as $row) {
 
     <form action="profil/profildo.php" method="post">
         <input type="hidden" name="nutzer_id" value="' .$row["nutzer_id"] .'">
+        Name:
         <input type="text" name="name" value="' . $row["name"] . '">
+        <br>
+        Vorname:
         <input type="text" name="vorname" value="' . $row["vorname"] . '">
-        <input type="text" name="email" value="' . $row["email"] . '">
+        <br>
+        Straße:
         <input type="text" name="strasse" value="' . $row["strasse"] . '">
+        <br>
+        Hausnummer:
         <input type="text" name="hausnr" value="' . $row["hausnr"] . '">
+        <br>
+        PLZ:
         <input type="text" name="plz" value="' . $row["plz"] . '">
+        <br>
+        Ort:
         <input type="text" name="ort" value="' . $row["ort"] . '">
+        <br>
+        <br>
         <input type="submit">
         
         <a href="passwortchangeform.php">Passwort ändern</a>

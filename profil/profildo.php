@@ -12,9 +12,9 @@ $plz = $_POST["plz"];
 $ort = $_POST["ort"];
 
 
-if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse)&& !empty($hausnr)&& !empty($plz)&& !empty($ort)) {
+if (!empty($name) && !empty($vorname) && !empty($strasse)&& !empty($hausnr)&& !empty($plz)&& !empty($ort)) {
 
-    $stmt = $db->query("UPDATE Nutzer SET name= '$name', vorname=  '$vorname' , email= '$email', strasse= '$strasse', hausnr= '$hausnr', plz= '$plz', ort= '$ort' WHERE nutzer_id =  '$nutzer_id'");
+    $stmt = $db->query("UPDATE Nutzer SET name= '$name', vorname=  '$vorname' , strasse= '$strasse', hausnr= '$hausnr', plz= '$plz', ort= '$ort' WHERE nutzer_id =  '$nutzer_id'");
     $stmt->execute();
     header("Location: ../index.php");
 

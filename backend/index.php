@@ -11,6 +11,12 @@ if (isset($_GET["action"]))
         case "artikel":
             include "artikel.php";
             break;
+        case "artikelchange":
+            include "artikelchangeform.php";
+            break;
+        case "artikelneu":
+            include "artikelneu.php";
+            break;
         case "benutzer":
             include "benutzer.php";
             break;

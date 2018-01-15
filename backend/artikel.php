@@ -1,9 +1,8 @@
 <?php
 
-
-
+session_start();
 include ('./dbconnect.php');
-echo '<a href=backend/artikelneu.php>Neuen Artikel anlegen</a><br><br>';
+echo '<a href="backend/artikelneu.php">Neuen Artikel anlegen</a><br><br>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();
@@ -23,7 +22,7 @@ echo '<ul class="flex-container">';
         echo '</a>
            </div>
         </li>
-         </ul>';
+         ';
     }
 
 ?>
