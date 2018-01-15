@@ -8,8 +8,8 @@ if (isset($_GET["action"]))
         case "bestellung":
             include "bestellung.php";
             break;
-        case "verwalten":
-            include "verwalten.php";
+        case "profilform":
+            include "profilform.php";
             break;
         default:
             echo "Seite nicht gefunden";
