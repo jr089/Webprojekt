@@ -1,5 +1,6 @@
-<html>
+<?php
+echo "
 
 <h3>Kontakt</h3>
-<a href="jukian@hdm-stuttgart.de">
-</html>
+<a href='mailto:jukian@hdm-stuttgart.de'>Mail</a>";
+?>

@@ -1,4 +1,5 @@
-<html>
+<?php
+echo"
 
 <h1>Impressum</h1>
 
@@ -24,6 +25,7 @@
 <h2>Streitschlichtung</h2>
 <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
-<p>Quelle: <a rel="nofollow" href="http://www.anwalt.de">Impressum-Generator von anwalt.de</a></p>
+<p>Quelle: <a rel='nofollow' href='http://www.anwalt.de'>Impressum-Generator von anwalt.de</a></p>
 
-</hmtl>
+";
+?>
