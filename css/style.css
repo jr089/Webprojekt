@@ -1,195 +1,1 @@
-body {
-    display: grid;
-    grid-template-areas:
-            "titel header header"
-            "sidebar article article"
-            "footer footer footer";
-    grid-template-rows: 80px 1fr 70px;
-    grid-template-columns: 150px 1fr 15%;
-    grid-row-gap: 15px;
-    grid-column-gap: 10px;
-    height: 95vh;
-    margin: 3%;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(-90deg, royalblue, white, royalblue);
-    background-size: 100%;
-}
-header, footer, article, nav, div {
-    padding: 1.2em;
-    background: darkgray;
-    border-radius: 5px;
-}
-
-.titelimage{
-
-    background-image: url(https://cdn-buttinette.com/shop/ALL/zwischenseiten/12000/farben-stifte.jpg);
-    background-size: 110%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#pageHeader {
-    grid-area: header;
-    margin: 0;
-    padding: 0;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-
-}
-#pageFooter {
-    grid-area: footer;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    -webkit-align-items: center;
-    align-items: center;
-}
-#mainArticle {
-    grid-area: article;
-}
-#mainArticle > div {
-    background-color: white;
-}
-#mainArticle h3 {
-    margin: 0;
-    text-align: center;
-}
-.flex-container {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-}
-.flex-item {
-    background: royalblue;
-    padding: 5px;
-    width: 400px;
-    height: 300px;
-    margin-top: 10px;
-
-    /*line-height: 300px;
-    font-weight: bold;
-    font-size: 3em;*/
-    color: white;
-    text-align: center;
-}
-#mainArticle img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    height: 60%;
-}
-#mainArticle img:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-#mainNav {
-    grid-area: sidebar;
-}
-#titel {
-    grid-area: titel;
-}
-#pageHeader ul {
-    vertical-align: middle;
-    list-style-type: none;
-}
-#pageHeader li {
-    float: left;
-}
-#pageHeader li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-#sidebar{
-    text-align: center;
-}
-#sidebar ul{
-    list-style-type: none;
-    padding: 0px;
-    max-width: 10em;
-    overflow: hidden;
-}
-#sidebar .sidebar-header{
-    padding: 0px;
-    max-width: 10em;
-    overflow: hidden;
-}
-ul.breadcrumb {
-    list-style: none;
-    text-align: center;
-    vertical-align: middle;
-}
-ul.breadcrumb li {
-    display: inline;
-}
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-
-/*--Artikelseite--*/
-.articleview{
-    display: grid;
-    grid-template-areas:
-            "picture description description"
-            "price description description";
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 15px;
-    grid-column-gap: 10px;
-    height: 90%;
-}
-#picture {
-    grid-area: picture;
-    text-align: center;
-}
-#picture img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 200px;
-}
-#price {
-    grid-area: price;
-    align-items: center;
-}
-#price-content {
-    align-self: center;
-    text-align: center;
-}
-#description {
-    grid-area: description;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 15px;
-}
-/* Stack the layout on small devices/viewports. /
-@media all and (max-width: 575px) {
-    body {
-        grid-template-areas:
-                "header"
-                "article"
-                "ads"
-                "nav"
-                "footer";
-        grid-template-rows: 80px 1fr 70px 1fr 70px;
-        grid-template-columns: 1fr;
-    }
-}*/
+body {    display: grid;    grid-template-areas:            "titel header header"            "sidebar article article"            "footer footer footer";    grid-template-rows: 80px 1fr 70px;    grid-template-columns: 150px 1fr 15%;    grid-row-gap: 15px;    grid-column-gap: 10px;    height: 95vh;    margin: 3%;    font-family: 'Roboto', sans-serif;    background: linear-gradient(-90deg, royalblue, white, royalblue);    background-size: 100%;}header, footer, article, nav, div {    padding: 1.2em;    background: darkgray;    border-radius: 5px;}.titelimage{    background-image: url(https://cdn-buttinette.com/shop/ALL/zwischenseiten/12000/farben-stifte.jpg);    background-size: 110%;    background-repeat: no-repeat;    background-position: center;}#pageHeader {    grid-area: header;    margin: 0;    padding: 0;    display: -webkit-flex;    display: flex;    -webkit-align-items: center;    align-items: center;}#pageFooter {    grid-area: footer;    margin: 0;    padding: 0;    display: inline-flex;    -webkit-align-items: center;    align-items: center;}#mainArticle {    grid-area: article;}#mainArticle > div {    background-color: white;}#mainArticle h3 {    margin: 0;    text-align: center;}.flex-container {    padding: 0;    margin: 0;    list-style: none;    display: -webkit-box;    display: -moz-box;    display: -ms-flexbox;    display: -webkit-flex;    display: flex;    -webkit-flex-flow: row wrap;    justify-content: space-around;}.flex-item {    background: royalblue;    padding: 5px;    width: 400px;    height: 300px;    margin-top: 10px;    /*line-height: 300px;    font-weight: bold;    font-size: 3em;*/    color: white;    text-align: center;}#mainArticle img {    border: 1px solid #ddd;    border-radius: 4px;    padding: 5px;    height: 60%;}#mainArticle img:hover {    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);}#mainNav {    grid-area: sidebar;}#titel {    grid-area: titel;}#pageHeader ul {    vertical-align: middle;    list-style-type: none;}#pageHeader li {    float: left;}#pageHeader li a {    display: block;    color: white;    text-align: center;    padding: 14px 16px;    text-decoration: none;}#sidebar{    text-align: center;}#sidebar ul{    list-style-type: none;    padding: 0px;    max-width: 10em;    overflow: hidden;}#sidebar .sidebar-header{    padding: 0px;    max-width: 10em;    overflow: hidden;}ul.breadcrumb {    list-style: none;    text-align: center;    vertical-align: middle;}ul.breadcrumb li {    display: inline;}ul.breadcrumb li+li:before {    padding: 8px;    color: black;    content: "/\00a0";}/*--Artikelseite--*/.articleview{    display: grid;    grid-template-areas:            "picture description description"            "price description description";    grid-template-rows: 1fr 1fr;    grid-template-columns: 1fr 1fr 1fr;    grid-row-gap: 15px;    grid-column-gap: 10px;    height: 90%;}#picture {    grid-area: picture;    text-align: center;}#picture img {    border: 1px solid #ddd;    border-radius: 4px;    padding: 5px;    width: 200px;}#price {    grid-area: price;    align-items: center;}#price-content {    align-self: center;    text-align: center;}#description {    grid-area: description;}table, th, td {    border: 1px solid black;    border-collapse: collapse;}th, td {    padding: 15px;}/* Stack the layout on small devices/viewports. /@media all and (max-width: 575px) {    body {        grid-template-areas:                "header"                "article"                "ads"                "nav"                "footer";        grid-template-rows: 80px 1fr 70px 1fr 70px;        grid-template-columns: 1fr;    }}*/
