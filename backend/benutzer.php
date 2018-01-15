@@ -34,8 +34,7 @@ foreach ($results as $row) {
     echo $name.", ".$vorname."<br>".$email."<br>".$strasse." ".$hausnr."<br>".$plz." ".$ort."<br>".$passwort;
     echo '</a>
            </div>
-        </li>
-         </ul>';
+        </li>';
 }
 
 ?>
