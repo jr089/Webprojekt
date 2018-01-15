@@ -101,10 +101,8 @@
 
                     //Benutzer eingeloggt
                     echo '
-                        <li><a href="#?page=profil&action=ansehen">Bestellungen ansehen</a></li>
                         <li><a href="?page=profil&action=profilform">Profil verwalten</a></li>
                         <li><a href="?page=profil&action=ansehen">Bestellungen ansehen</a></li>
-                        <li><a href="#?page=profil&action=verwalten">Profil verwalten</a></li>
                         <li><a href="account/logout.php?page=account&action=logout">Logout</a></li>';
                 }
 
