@@ -23,7 +23,7 @@ foreach($result as $row) {
     $preisgesammt = $preisgesammt + $add;
     ?>
         <tr>
-            <td><a href="?page=artikel&artikelnummer=<?php echo $row['artikelnummer']?>">
+            <td><a href="?page=artikel&artikelnummer=<?php echo $row['artikel']?>">
                     <?=$row['artikelname'];?>
                 </a></td><td><?=$row['anzahl'];?></td>
             <td><?=$row['preis'];?></td

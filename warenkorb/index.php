@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION["email"]))
-{
-    header("location:./index.php");
-}
 session_start();
 include "./dbconnect.php";
 if (isset($_SESSION['warenkorb']))
@@ -25,6 +21,7 @@ foreach ($_SESSION['warenkorb'] as $key => $wk){
     $results = $stmt->fetch();
     $add = ($results['preis'] * $wk['anzahl']);
     $preisgesammt = $preisgesammt + $add;
+    $ref = $key;
 ?>
     <tr>
         <td><?=$key;?></td>
@@ -32,8 +29,9 @@ foreach ($_SESSION['warenkorb'] as $key => $wk){
                 <?=$results['name'];?>
             </a></td>
         <td><?=$results['preis'];?></td>
-        <td><?=$wk['anzahl'];?></td>
+        <td><input type="number" name="anzahl[<?=$ref;?>]" value="<?=$wk['anzahl'];?>" min="1"</td>
         <td><input type="checkbox" name="delete[]" value="<?=$key;?>"></td>
+        <input type="hidden" name="ref[]" value="<?=$ref;?>"
     </tr>
 <?php } ?>
     </table>
@@ -46,7 +44,8 @@ foreach ($_SESSION['warenkorb'] as $key => $wk){
     <form action="?page=kasse&action=overview" method="post">
         <input type="submit" value="Kasse">
     </form>
-<?php }
+<?php
+}
 else
     { ?>
 <div>

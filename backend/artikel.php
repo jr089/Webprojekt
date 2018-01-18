@@ -24,7 +24,7 @@ echo '<ul class="flex-container">';
         echo '<li class="flex-item">
 
         <div class="mini-beschreibung">
-            <a href="backend/artikelchangeform.php?artikelnummer='.        $artikelnummer .'">';
+            <a href="?page=backend&action=artikelchange&artikelnummer='.        $artikelnummer .'">';
         echo $artikelname."<br>".$preis." €";
         echo '</a>
            </div>

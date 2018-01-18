@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION["email"]))
-{
-    header("location:./index.php");
-}
 session_start();
 include "../dbconnect.php";
 //check ob eingeloggt
@@ -32,6 +28,7 @@ if (isset($_SESSION['login'])) {
             $db->exec($sql);
         }
         //include "./mail.php";
+        unset($_SESSION['warenkorb']);
         header('Location: ../index.php?page=kasse&action=erfolg');
     }
 }
