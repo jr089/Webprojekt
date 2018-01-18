@@ -1,8 +1,15 @@
 <?php
+session_start();
+
+//Berechtigung vorhanden?
+if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
+{
+    header("location:./index.php");
+}
 
 session_start();
 include ('./dbconnect.php');
-echo '<a href="backend/artikelneu.php">Neuen Artikel anlegen</a><br><br>';
+echo '<a href="?page=backend&action=artikelneu">Neuen Artikel anlegen</a><br><br>';
 $stmt = $db->query("SELECT * FROM artikel");
 $stmt->execute();
 $results = $stmt->fetchAll();

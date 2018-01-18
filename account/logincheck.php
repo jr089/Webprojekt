@@ -1,9 +1,10 @@
 <?php
+
 session_start();
 include "../dbconnect.php";
 if (isset($_POST["email"]) AND isset($_POST["passwort"]))
 {
-    $passwort=($_POST["passwort"]);
+    $passwort=md5($_POST["passwort"]);
     $stmt=$db->prepare("SELECT * FROM Nutzer WHERE email=:email AND passwort=:passwort");
     $stmt->bindParam(":email", $_POST["email"]);
     $stmt->bindParam(":passwort", $passwort );
@@ -24,6 +25,7 @@ if (isset($_POST["email"]) AND isset($_POST["passwort"]))
         $_SESSION["name"]=$row["name"];
         $_SESSION["login"] = $row["email"];
         $_SESSION["nutzerid"] = $row["nutzer_id"];
+        $_SESSION["rollen_id"]=$row["rollen_id"];
         header ("Location: ../index.php");
     }
 }

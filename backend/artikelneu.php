@@ -1,4 +1,10 @@
 <?php
+
+//Berechtigung vorhanden?
+if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
+{
+    header("location:./index.php");
+}
 include ("./dbconnect.php");
 
 echo'

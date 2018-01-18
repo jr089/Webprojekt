@@ -1,4 +1,11 @@
 <?php
+
+//Berechtigung vorhanden?
+if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
+{
+    header("location:./index.php");
+}
+
 $artikelnummer=$_GET ["artikelnummer"];
 
 include ('./dbconnect.php');

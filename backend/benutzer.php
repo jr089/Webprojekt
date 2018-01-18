@@ -1,12 +1,10 @@
 <?php
 
-/*echo'
-    <head>
-        <meta charset="UTF-8">
-        <title>Jukian Schreibwaren</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </head>';*/
+//Berechtigung vorhanden?
+if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
+{
+    header("location:./index.php");
+}
 
 include ('./dbconnect.php');
 

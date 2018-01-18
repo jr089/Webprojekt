@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION["email"]))
+{
+    header("location:./index.php");
+}
 session_start();
 include "../dbconnect.php";
 //check ob eingeloggt

@@ -1,4 +1,9 @@
 <?php
+//Berechtigung vorhanden?
+if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 2)
+{
+    header("location:./index.php");
+}
 session_start();
             include_once "./dbconnect.php";
             $email = $_SESSION["email"];

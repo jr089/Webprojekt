@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION["email"]))
+{
+    header("location:./index.php");
+}
 if (isset($_GET["action"]))
 {
     switch ($_GET["action"]) {
