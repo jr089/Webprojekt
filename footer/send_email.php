@@ -2,13 +2,13 @@
 //send_email.php
 $email_from = "absender@domain.de";   //Absender falls keiner angegeben wurde
 $sendermail_antwort = true;      //E-Mail Adresse des Besuchers als Absender. false= Nein ; true = Ja
-$name_von_emailfeld = "Email";   //Feld in der die Absenderadresse steht
+$name_emailfeld = "Email";   //Feld in der die Absenderadresse steht
 
 $empfaenger = "reger.julia@web.de"; //Empfänger-Adresse
 $betreff = "Neue Kontaktanfrage"; //Betreff der Email
 
-$url_ok = "index.php?page=footer&action=erfolg"; //Zielseite, wenn E-Mail erfolgreich versendet wurde
-$url_fehler = "index.php?page=footer&action=fehler"; //Zielseite, wenn E-Mail nicht gesendet werden konnte
+$url_ok = "../index.php?page=footer&action=erfolg"; //Zielseite, wenn E-Mail erfolgreich versendet wurde
+$url_fehler = "../index.php?page=footer&action=fehler"; //Zielseite, wenn E-Mail nicht gesendet werden konnte
 
 
 //Diese Felder werden nicht in der Mail stehen
@@ -47,8 +47,8 @@ while (list($name,$value) = each($_POST)) {
 
 
 //E-Mail Adresse des Besuchers als Absender
-if ($sendermail_antwort and isset($_POST[$name_von_emailfeld]) and filter_var($_POST[$name_von_emailfeld], FILTER_VALIDATE_EMAIL)) {
-    $email_from = $_POST[$name_von_emailfeld];
+if ($sendermail_antwort and isset($_POST[$name_emailfeld]) and filter_var($_POST[$name_emailfeld], FILTER_VALIDATE_EMAIL)) {
+    $email_from = $_POST[$name_emailfeld];
 }
 
 $header="From: $email_from";

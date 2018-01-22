@@ -9,7 +9,7 @@
     <input type="text" id="Betreff" name="Betreff"><br><br>
 
     <label for="Nachricht">Nachricht:</label><br>
-    <textarea id="Nachricht" name="Nachricht" rows="10" cols="50"></textarea> <br><br>
+    <textarea id="Nachricht" name="Nachricht" rows="10" cols="30"></textarea> <br><br>
 
     <input type="submit" name="submit">
 </form>
