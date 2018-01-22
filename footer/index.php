@@ -12,6 +12,12 @@ if (isset($_GET["action"]))
         case "kontakt":
             include "kontakt.php";
             break;
+        case "erfolg":
+            include "erfolg.php";
+            break;
+        case "fehler";
+            include "fehler.php";
+            break;
         default:
             echo "Seite nicht gefunden";
             die();
