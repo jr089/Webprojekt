@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Berechtigung vorhanden?
 if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 {
@@ -15,6 +16,9 @@ $beschreibung = $_POST["beschreibung"];
 if (!empty($name) && !empty($preis) && !empty($beschreibung)) {
     //echo "UPDATE artikel SET name= ' $name ', preis=  $preis , beschreibung= ' $beschreibung ' WHERE artikelnummer =   $artikelnummer ";
     $stmt = $db->query("UPDATE artikel SET name= ' $name ', preis=  $preis , beschreibung= ' $beschreibung ' WHERE artikelnummer =   $artikelnummer ");
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":preis", $preis);
+    $stmt->bindParam(":beschreibung", $beschreibung);
     $stmt->execute();
     header("Location: artikel.php");
 

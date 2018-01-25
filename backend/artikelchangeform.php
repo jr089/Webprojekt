@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Berechtigung vorhanden?
 if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 {
@@ -17,7 +17,7 @@ foreach ($results as $row) {
 
     echo '
 
-    <form action="artikelchangedo.php" method="post">
+    <form action="backend/artikelchangedo.php" method="post">
         <input type="hidden" name="artikelnummer" value="' . $artikelnummer . '">
         <br>
         <input type="text" name="name" value="' . $row["name"] . '">

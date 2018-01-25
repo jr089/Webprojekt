@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Berechtigung vorhanden?
 if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 {
@@ -20,6 +21,14 @@ $passwort = $_POST["passwort"];
 if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !empty($hausnr) && !empty($plz) && !empty($ort) && !empty($passwort)) {
     //echo "UPDATE nutzer SET name= ' $name ', vorname= ' $vorname' , email= ' $email ', adresse= ' $adresse ', passwort= ' $passwort ' WHERE nutzer_id =   $nutzer_id ";
     $stmt = $db->query("UPDATE Nutzer SET name= ' $name ', vorname=  $vorname , email= ' $email ' , strasse= ' $strasse ' ,hausnr= ' $hausnr ', plz= ' $plz ' , ort= ' $ort ' , passwort= ' $passwort ' WHERE nutzer_id =   $nutzer_id ");
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":vorname", $vorname);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":strasse", $strasse);
+    $stmt->bindParam(":hausnr", $hausnr);
+    $stmt->bindParam(":plz", $plz);
+    $stmt->bindParam(":ort", $ort);
+    $stmt->bindParam(":passwort", $passwort);
     $stmt->execute();
     header("Location: benutzer.php");
 

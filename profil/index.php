@@ -15,6 +15,9 @@ if (isset($_GET["action"]))
         case "profilform":
             include "profilform.php";
             break;
+        case "passwortchange":
+            include "passwortchangeform.php";
+            break;
         default:
             echo "Seite nicht gefunden";
             die();

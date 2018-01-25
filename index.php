@@ -50,11 +50,7 @@
             case "profil":
                 include "profil/index.php";
                 break;
-            case "profil":
-                include "profil/index.php";
-                break;
             case "footer":
-
                 include "footer/index.php";
                 break;
         }

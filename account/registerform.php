@@ -17,10 +17,10 @@ echo "<div class=\"form\">
         <input type=\"Text\" name=\"strasse\"><br><br>
         
         Hausnummer:<br>
-        <input type=\"Text\" name=\"hausnr\"><br><br>
+        <input type=\"number\" name=\"hausnr\"><br><br>
         
         PLZ:<br>
-        <input type=\"Text\" name=\"plz\"><br><br>
+        <input type=\"number\" name=\"plz\"><br><br>
         
         Ort:<br>
         <input type=\"Text\" name=\"ort\"><br><br>
