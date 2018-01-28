@@ -38,7 +38,8 @@ foreach ($results as $row) {
         <br>
         <br>
         <input type="submit">
-        
+        <br>
+        <br>
         <a href="?page=profil&action=passwortchange">Passwort ändern</a>
     </form>
 

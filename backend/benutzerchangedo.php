@@ -7,7 +7,7 @@ if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 }
 include ('../dbconnect.php');
 
-$nutzer_id = $_POST ["nutzer_id"];
+$nutzerid = $_POST ["nutzer_id"];
 $name = $_POST["name"];
 $vorname = $_POST["vorname"];
 $email = $_POST["email"];
@@ -15,12 +15,14 @@ $strasse = $_POST['strasse'];
 $hausnr = $_POST['hausnr'];
 $plz = $_POST['plz'];
 $ort = $_POST['ort'];
-$passwort = $_POST["passwort"];
 
 
-if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !empty($hausnr) && !empty($plz) && !empty($ort) && !empty($passwort)) {
-    //echo "UPDATE nutzer SET name= ' $name ', vorname= ' $vorname' , email= ' $email ', adresse= ' $adresse ', passwort= ' $passwort ' WHERE nutzer_id =   $nutzer_id ";
-    $stmt = $db->query("UPDATE Nutzer SET name= ' $name ', vorname=  $vorname , email= ' $email ' , strasse= ' $strasse ' ,hausnr= ' $hausnr ', plz= ' $plz ' , ort= ' $ort ' , passwort= ' $passwort ' WHERE nutzer_id =   $nutzer_id ");
+
+if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !empty($hausnr) && !empty($plz) && !empty($ort)) {
+
+
+    //echo "UPDATE Nutzer SET name='$name', vorname='$vorname , email=$email , strasse='$strasse' ,hausnr='$hausnr', plz='$plz' , ort='$ort' WHERE nutzer_id =$nutzerid ";
+    $stmt = $db->query("UPDATE Nutzer SET name='$name', vorname='$vorname' , email='$email' , strasse='$strasse' ,hausnr='$hausnr', plz='$plz' , ort='$ort' WHERE nutzer_id =$nutzerid ");
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":vorname", $vorname);
     $stmt->bindParam(":email", $email);
@@ -28,10 +30,11 @@ if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !
     $stmt->bindParam(":hausnr", $hausnr);
     $stmt->bindParam(":plz", $plz);
     $stmt->bindParam(":ort", $ort);
-    $stmt->bindParam(":passwort", $passwort);
     $stmt->execute();
-    header("Location: benutzer.php");
+    header("Location: ../index.php?page=backend&action=benutzer");
 
 } else {
     echo "Error: Bitte alle Felder ausfüllen!";
 }
+
+?>

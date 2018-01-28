@@ -6,10 +6,10 @@ if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 {
     header("location:./index.php");
 }
-$nutzer_id=$_GET ["nutzer_id"];
+$nutzerid=$_GET ["nutzer_id"];
 
 include ('./dbconnect.php');
-$stmt = $db->query("SELECT * FROM Nutzer WHERE nutzer_id=".$nutzer_id);
+$stmt = $db->query("SELECT * FROM Nutzer WHERE nutzer_id=".$nutzerid);
 $stmt->execute();
 $results = $stmt->fetchAll();
 
@@ -17,8 +17,8 @@ foreach ($results as $row) {
 
     echo '
 
-    <form action="benutzerchangedo.php" method="post">
-        <input type="hidden" name="nutzer_id" value="' . $nutzer_id . '">
+    <form action="backend/benutzerchangedo.php" method="post">
+        <input type="hidden" name="nutzer_id" value="' . $nutzerid . '">
         <br>
         Name:
         <input type="text" name="name" value="' . $row["name"] . '">
@@ -40,14 +40,13 @@ foreach ($results as $row) {
         <br>
         Ort:
         <input type="text" name="ort" value="' . $row["ort"] . '">
-        <br>
-        Passwort:
-        <input type="password" name="passwort" value="' . $row["passwort"] . '">
+        
         <br>
         <br>
         <input type="submit">
     </form>
-
+ <br>
+    <a href="?page=backend&action=benutzerdelete&nutzer_id='.        $nutzerid .'">Diesen Benutzer löschen</a>
 ';
 }
 

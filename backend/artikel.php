@@ -20,11 +20,15 @@ echo '<ul class="flex-container">';
         $artikelname = $row['name'];
         $artikelnummer = $row ['artikelnummer'];
         $preis = $row ['preis'];
+        $pfad = $row['bildpfad'];
 
         echo '<li class="flex-item">
 
+        <img src="./artikel/artikelbilder/'.        $artikelnummer .'.jpg">
         <div class="mini-beschreibung">
-            <a href="?page=backend&action=artikelchange&artikelnummer='.        $artikelnummer .'">';
+            <a href="?page=backend&action=artikelchange&artikelnummer='.        $artikelnummer .'">     
+            ';
+
         echo $artikelname."<br>".$preis." €";
         echo '</a>
            </div>

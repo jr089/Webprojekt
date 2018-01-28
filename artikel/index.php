@@ -13,7 +13,7 @@
 <div class="articleview">
 
     <div id="picture">
-<img src="./artikel/artikelbilder/<?php echo $results['bildpfad'];?>">
+<img src="./artikel/artikelbilder/<?php echo $results['artikelnummer'].".jpg";?>">
     </div>
     <div id="price">
         <div id="price-content">
