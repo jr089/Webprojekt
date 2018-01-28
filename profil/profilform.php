@@ -1,10 +1,11 @@
 <?php
+session_start();
 //Berechtigung vorhanden?
 if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 2)
 {
     header("location:./index.php");
 }
-session_start();
+
             include_once "./dbconnect.php";
             $email = $_SESSION["email"];
         $stmt=$db->query("SELECT * FROM Nutzer WHERE email='".$email."'");
@@ -27,18 +28,19 @@ foreach ($results as $row) {
         <input type="text" name="strasse" value="' . $row["strasse"] . '">
         <br>
         Hausnummer:
-        <input type="text" name="hausnr" value="' . $row["hausnr"] . '">
+        <input type="number" name="hausnr" value="' . $row["hausnr"] . '">
         <br>
         PLZ:
-        <input type="text" name="plz" value="' . $row["plz"] . '">
+        <input type="number" name="plz" value="' . $row["plz"] . '">
         <br>
         Ort:
         <input type="text" name="ort" value="' . $row["ort"] . '">
         <br>
         <br>
         <input type="submit">
-        
-        <a href="passwortchangeform.php">Passwort ändern</a>
+        <br>
+        <br>
+        <a href="?page=profil&action=passwortchange">Passwort ändern</a>
     </form>
 
 ';

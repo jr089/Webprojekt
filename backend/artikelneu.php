@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Berechtigung vorhanden?
 if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 {
@@ -9,7 +9,7 @@ include ("./dbconnect.php");
 
 echo'
 
-<form action="artikelneudo.php" method="post"> 
+<form action="backend/artikelneudo.php" method="post" enctype="multipart/form-data"> 
     <input type="text" name="name" placeholder="Artikelbezeichnung">
     <br>
     <input type="text" name="preis" placeholder="Preis">
@@ -21,6 +21,8 @@ echo'
     <input type="text" name="beschreibung" placeholder="Beschreibung">
     <br>
     <input type="text" name="kategorie_id" placeholder="Kategorie ID">
+    <br>
+    <input type="file" name ="bild">
     <br>
     <br>
     <input type="submit" name="Artikel erstellen">

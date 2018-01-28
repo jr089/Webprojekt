@@ -14,7 +14,7 @@ $nr = rand(1,80);
         $artikelname = $rowkategorie['name'];
         $preis = $rowkategorie['preis'];
         $artikelnummer = $rowkategorie ['artikelnummer'];
-        $pfad = $rowkategorie['bildpfad'];
+        $pfad = $rowkategorie['artikelnummer'].".jpg";
         ?>
         <li class="flex-item">
             <a href="?page=artikel&artikelnummer=<?php echo $artikelnummer?>">
