@@ -4,7 +4,7 @@ $email_from = "absender@domain.de";   //Absender falls keiner angegeben wurde
 $sendermail_antwort = true;      //E-Mail Adresse des Besuchers als Absender. false= Nein ; true = Ja
 $name_emailfeld = "Email";   //Feld in der die Absenderadresse steht
 
-$empfaenger = "reger.julia@web.de"; //Empfänger-Adresse
+$empfaenger = "jukian.webshop@yandex.com"; //Empfänger-Adresse
 $betreff = "Neue Kontaktanfrage"; //Betreff der Email
 
 $url_ok = "../index.php?page=footer&action=erfolg"; //Zielseite, wenn E-Mail erfolgreich versendet wurde
@@ -18,23 +18,14 @@ $ignore_fields = array('submit');
 
 
 //Datum, wann die Mail erstellt wurde
-$name_tag = array();
-$name_tag[0] = "Sonntag";
-$name_tag[1] = "Montag";
-$name_tag[2] = "Dienstag";
-$name_tag[3] = "Mittwoch";
-$name_tag[4] = "Donnerstag";
-$name_tag[5] = "Freitag";
-$name_tag[6] = "Samstag";
-$num_tag = date("w");
-$tag = $name_tag[$num_tag];
+
 $jahr = date("Y");
 $n = date("d");
 $monat = date("m");
 $time = date("H:i");
 
 //Erste Zeile unserer Email
-$msg = ":: Gesendet am $tag, den $n.$monat.$jahr - $time Uhr ::\n\n";
+$msg = ":: Gesendet am $n.$monat.$jahr - $time Uhr ::\n\n";
 
 //Hier werden alle Eingabefelder abgefragt
 while (list($name,$value) = each($_POST)) {

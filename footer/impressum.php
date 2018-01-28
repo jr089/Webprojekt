@@ -11,7 +11,7 @@ echo"
 
 <h2>Kontakt:</h2>
 <p>Telefon: 0711/123456789<br />
-    E-Mail: jukian@hdm-stuttgart.de</p>
+    E-Mail: jukian.webshop@yandex.com</p>
 
 <h2>Registereintrag:</h2>
 <p>Eintragung im Handelsregister. <br />
