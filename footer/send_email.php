@@ -57,3 +57,5 @@ if($mail_senden){
     header("Location: ".$url_fehler); //Fehler beim Senden
     exit();
 }
+
+?>

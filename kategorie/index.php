@@ -40,8 +40,7 @@ if (isset($id)) {
             </a>
             </br>
             Preis:
-            <?php echo $preis ?>
-             €
+            <?php echo $preis ?>€
         </div>
 
     </li>
