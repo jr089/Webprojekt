@@ -3,7 +3,7 @@ if (isset($_GET["action"]))
 {
     switch ($_GET["action"]) {
         case "loginform":
-            include "./account/loginform.php";
+            include "loginform.php";
             break;
         case "registerform":
             include "registerform.php";

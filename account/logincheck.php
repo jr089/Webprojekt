@@ -17,6 +17,12 @@ if (isset($_POST["email"]) AND isset($_POST["passwort"]))
     if (!$row = $stmt->fetch(PDO::FETCH_ASSOC))
     {
         echo "Nutzer nicht gefunden";
+        echo
+        "
+        <form action=\"../index.php\">
+            <input type=\"submit\" value=\"Zurück zur Startseite.\" />
+        </form>
+        ";
         die();
     }
     else
