@@ -16,4 +16,7 @@ if (isset($_GET["action"]))
 }
 else
 {
-    echo "Seite nicht gefunden";}
+    echo "Seite nicht gefunden";
+}
+
+?>

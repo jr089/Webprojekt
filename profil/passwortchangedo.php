@@ -6,7 +6,8 @@ include_once "../dbconnect.php";
 
 $email = $_SESSION["email"];
 echo $email;
-$stmt=$db->query("SELECT * FROM Nutzer WHERE email='".$email."'");
+$stmt=$db->prepare("SELECT * FROM Nutzer WHERE email=:email");
+$stmt->bindParam(":email", $email);
 $stmt->execute();
 $results = $stmt->fetch();
 echo $results["passwort"];
@@ -15,8 +16,9 @@ if (isset($_POST["passwortalt"]) AND isset($_POST["passwortneu"]) AND isset($_PO
     if (!empty($_POST["passwortalt"])&&!empty($_POST["passwortneu"])&&!empty($_POST["passwortneu2"])) {
         if (md5($_POST["passwortalt"]) == $results["passwort"]){
             if (md5($_POST["passwortneu"]) == md5($_POST["passwortneu2"])) {
-                $stmt = $db->prepare("UPDATE Nutzer SET passwort =:passwort WHERE email='".$email."'");
+                $stmt = $db->prepare("UPDATE Nutzer SET passwort =:passwort WHERE email=:email");
                 $stmt->bindParam(":passwort", md5($_POST["passwortneu"]));
+                $stmt->bindParam(":email", $email);
 
                 echo $stmt->queryString;
 
