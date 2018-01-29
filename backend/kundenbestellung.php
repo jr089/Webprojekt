@@ -5,6 +5,7 @@ if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
     header("location:./index.php");
 }
 session_start();
+
 include "./dbconnect.php";
 $nutzer = $_SESSION['nutzerid'];
 $bn = $_GET['bn'];
@@ -26,7 +27,7 @@ echo "<div>
         </tr>";
 foreach($result as $row) {
     $add = ($row['preis'] * $row['anzahl']);
-    $preisgesammt = $preisgesammt + $add;
+    $preisgesamt = $preisgesamt + $add;
     ?>
     <tr>
         <td><a href="?page=artikel&artikelnummer=<?php echo $row['artikelnummer']?>">
@@ -37,7 +38,7 @@ foreach($result as $row) {
     <?php
 }?>
 </table> <br>
-Der Gesamtwert der Bestellung beträgt:  <?=$preisgesammt;?> €
+Der Gesamtwert der Bestellung beträgt:  <?=$preisgesamt;?> €
 <br><br>
 Kundeninformationen <br>
 Vorname: <?=$vorname;?> <br>

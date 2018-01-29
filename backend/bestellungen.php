@@ -15,7 +15,7 @@ echo '<ul class="flex-container">';
 
 /*foreach ($results as $row) {
     $artikelname = $row['name'];
-    $abestellnummer = $row ['bestellnummer'];
+    $bestellnummer = $row ['bestellnummer'];
     $preis = $row ['preis'];
 
     echo '<li class="flex-item">

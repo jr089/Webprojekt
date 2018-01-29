@@ -21,7 +21,7 @@ if (!empty($name) && !empty($preis) && !empty($beschreibung)) {
     $stmt->bindParam(":preis", $preis);
     $stmt->bindParam(":beschreibung", $beschreibung);
     $stmt->execute();
-    header("Location: ../index.php");
+    header("Location: ../index.php?page=backend&action=artikel");
 
 } else {
     echo "Error: Bitte alle Felder ausfüllen!";

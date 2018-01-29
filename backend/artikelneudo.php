@@ -35,7 +35,7 @@ if (!empty($name) && !empty($preis) && !empty($beschreibung) &&!empty($ean) &&!e
     move_uploaded_file($_FILES['bild']['tmp_name'], '../artikel/artikelbilder/'.$dateiname.".jpg");
 
 
-    header("Location: ../index.php");
+    header("Location: ../index.php?page=backend&action=artikel");
 } else {
     echo "Error: Bitte alle Felder ausfüllen!";
 }
