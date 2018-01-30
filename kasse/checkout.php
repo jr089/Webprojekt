@@ -27,7 +27,7 @@ if (isset($_SESSION['login'])) {
                     VALUES ('$newbn', '$nutzerid', '$artikelid', '$anzahl', NOW(), '$zahlmethode')";
             $db->exec($sql);
         }
-        //include "./mail.php";
+        include "./mail.php";
         unset($_SESSION['warenkorb']);
         header('Location: ../index.php?page=kasse&action=erfolg');
     }

@@ -38,7 +38,7 @@ if (isset($_SESSION['warenkorb']))
             <fieldset>
                 <legend> Rechtliches </legend>
                 <input type="radio" id="agb" name="agb" value="agb" required>
-                <label for="mc"> Hiermit akzeptieren Sie die allgemeinen AGBS und unsere Datenschutzbestimmungen</label>
+                <label for="mc"> Hiermit akzeptieren Sie die allgemeinen <a target="_blank" href="?page=kasse&action=agb"> AGBS </a>  und unsere <a target="_blank" href="?page=kasse&action=datenschutz"> Datenschutzbestimmungen </a></label>
             </fieldset>
             </br>
             <input type="submit" value="checkout">

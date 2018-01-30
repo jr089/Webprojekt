@@ -8,11 +8,11 @@ body {
     grid-template-columns: 150px 1fr 15%;
     grid-row-gap: 15px;
     grid-column-gap: 10px;
-    height: 95vh;
+    /*height: 95vh;*/
     margin: 3%;
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(-90deg, royalblue, white, royalblue);
-    background-size: 100%;
+    /*background-size: 100%;*/
 }
 header, footer, article, nav, div {
     padding: 1.2em;
@@ -113,6 +113,7 @@ header, footer, article, nav, div {
 }
 
 #sidebar{
+    grid-area: sidebar;
     text-align: center;
 }
 #sidebar ul{
@@ -146,7 +147,7 @@ ul.breadcrumb li+li:before {
     grid-template-areas:
             "picture description description"
             "price description description";
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0fr 0fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 15px;
     grid-column-gap: 10px;
@@ -180,6 +181,58 @@ table, th, td {
 th, td {
     padding: 15px;
 }
+@media only screen and (max-device-width: 700px) {
+    body {
+        display: grid;
+        grid-template-areas: "titel header header" "sidebar sidebar sidebar" "article article article" "footer footer footer";
+        grid-template-rows: 80px 90px 1fr 70px;
+        grid-template-columns: 150px 1fr 15%;
+        grid-row-gap: 15px;
+        grid-column-gap: 10px;}
+
+        #sidebar ul{
+            float: left;
+            margin: 0.1em;
+            max-width: none;
+        }
+        #sidebar li {
+            display: inline-flex;
+        }
+nav {
+padding: 0.1em;
+}
+.sidebar-header h3{
+    margin: 0.1em;
+}
+    #sidebar .sidebar-header {
+        max-width: unset;
+    }
+    .articleview{
+        display: grid;
+        grid-template-areas:
+                "picture"
+                "price"
+                "description";
+        grid-template-rows: 0fr 0fr 0fr;
+        grid-template-columns: 1fr;
+        grid-row-gap: 15px;
+        grid-column-gap: 10px;
+        height: 90%;
+    }
+}
+@media only screen and (max-device-width: 360px) {
+    body {
+        display: grid;
+        grid-template-areas: "header header header" "sidebar sidebar sidebar" "article article article" "footer footer footer";
+        grid-template-rows: 80px 90px 1fr 70px;
+        grid-template-columns: 150px;
+        grid-row-gap: 15px;
+        grid-column-gap: 10px;}
+    .titelimage {
+        display: none;
+    }
+}
+
 /* Stack the layout on small devices/viewports. /
 @media all and (max-width: 575px) {
     body {

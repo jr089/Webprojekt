@@ -8,7 +8,7 @@ session_start();
 include "./dbconnect.php";
 $nutzer = $_SESSION['nutzerid'];
 $bn = $_GET['bn'];
-$stmt = $db->prepare("SELECT a.name, a.preis, b.*, a.name AS artikelname, n.name, n.vorname FROM bestellungen b INNER JOIN artikel a ON (b.artikel=a.artikelnummer) INNER JOIN Nutzer n ON (b.kunde=n.nutzer_id) WHERE b.artikel=a.artikelnummer AND b.bestellnummer=" .$bn ." AND b.kunde=" .$nutzer);
+$stmt = $db->prepare("SELECT a.name, a.preis, b.*, a.name AS artikelname, n.name, n.vorname, artikel artnr FROM bestellungen b INNER JOIN artikel a ON (b.artikel=a.artikelnummer) INNER JOIN Nutzer n ON (b.kunde=n.nutzer_id) WHERE b.artikel=a.artikelnummer AND b.bestellnummer=" .$bn ." AND b.kunde=" .$nutzer);
 $stmt->execute();
 $result = $stmt->fetchAll();
 echo "<div>
@@ -23,7 +23,7 @@ foreach($result as $row) {
     $preisgesammt = $preisgesammt + $add;
     ?>
         <tr>
-            <td><a href="?page=artikel&artikelnummer=<?php echo $row['artikel']?>">
+            <td><a href="?page=artikel&artikelnummer=<?php echo $row['artnr'];?>">
                     <?=$row['artikelname'];?>
                 </a></td><td><?=$row['anzahl'];?></td>
             <td><?=$row['preis'];?></td

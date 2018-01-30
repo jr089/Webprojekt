@@ -4,24 +4,32 @@ if (isset($_GET['action']))
     switch ($_GET["action"]) {
         case "stifte":
             $id = 1;
+            $kat = "Stifte";
             break;
         case "zeichnen":
             $id = 2;
+            $kat = "Zeichnen";
             break;
         case "ordnung":
             $id = 3;
+            $kat = "Ordnung";
             break;
         case "hefte":
             $id = 4;
+            $kat = "Hefte";
             break;
         case "sonstiges":
             $id = 5;
+            $kat = "Sonstiges";
             break;
     }
 if (isset($id)) {
     $stmt = $db->query("SELECT * FROM artikel WHERE kategorie_id=" .$id);
     $results = $stmt->fetchAll();
     ?>
+    <div class="article-ueberschrift">
+    <h3><?=$kat;?></h3>
+</div>
 <ul class="flex-container">
     <?php
     foreach ($results as $rowkategorie) {

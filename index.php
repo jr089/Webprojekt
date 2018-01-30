@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8", name=viewport content="width=device-width, initial-scale=1">
     <title>Jukian Schreibwaren</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -17,12 +17,8 @@
     <ul>
         <li class="active"><a href="?">Home</a></li>
         <li><a href="?page=faq">Hilfe</a></li>
-        <li><a href="?page=warenkorb">Warenkorb <i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="?page=warenkorb">Warenkorb</a></li>
     </ul>
-    <form id="headersearch">
-        <input type="text" placeholder="Suche">
-        <button type="submit">Submit</button>
-    </form>
 </header>
 <article id="mainArticle">
     <?php
