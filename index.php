@@ -16,7 +16,7 @@
 <header id="pageHeader">
     <ul>
         <li class="active"><a href="?">Home</a></li>
-        <li><a href="#">Hilfe</a></li>
+        <li><a href="?page=faq">Hilfe</a></li>
         <li><a href="?page=warenkorb">Warenkorb <i class="material-icons">shopping_cart</i></a></li>
     </ul>
     <form id="headersearch">
@@ -43,6 +43,9 @@
                 break;
             case "warenkorb":
                 include "warenkorb/index.php";
+                break;
+            case "faq":
+                include "faq.php";
                 break;
             case "kasse":
                 include "kasse/index.php";

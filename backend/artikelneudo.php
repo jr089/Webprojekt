@@ -39,3 +39,4 @@ if (!empty($name) && !empty($preis) && !empty($beschreibung) &&!empty($ean) &&!e
 } else {
     echo "Error: Bitte alle Felder ausfüllen!";
 }
+?>

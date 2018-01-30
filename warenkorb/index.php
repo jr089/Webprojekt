@@ -53,4 +53,6 @@ else
 <form>
 <input type="button" value="zurück zur Startseite" onclick="window.location.href='?'"/>
 </form>
-</div><?php } ?>
+</div>
+
+<?php } ?>

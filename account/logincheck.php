@@ -41,3 +41,4 @@ else
     echo $_POST["email"];
     echo $_POST["passwort"];
 }
+?>
