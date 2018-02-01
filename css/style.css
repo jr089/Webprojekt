@@ -16,7 +16,7 @@ body {
 }
 header, footer, article, nav, div {
     padding: 1.2em;
-    background: darkgray;
+    background: rgba(169, 169, 169, 0.64);
     border-radius: 5px;
 }
 
@@ -49,7 +49,7 @@ header, footer, article, nav, div {
     grid-area: article;
 }
 #mainArticle > div {
-    background-color: white;
+    background-color: #ffffff;
 }
 #mainArticle h3 {
     margin: 0;
@@ -70,7 +70,7 @@ header, footer, article, nav, div {
     justify-content: space-around;
 }
 .flex-item {
-    background: royalblue;
+    background: #8faee1;
     padding: 5px;
     width: 400px;
     height: 300px;
@@ -79,11 +79,15 @@ header, footer, article, nav, div {
     /*line-height: 300px;
     font-weight: bold;
     font-size: 3em;*/
-    color: white;
+    color: #000000;
     text-align: center;
 }
+.mini-beschreibung {
+    background: #ffffff;
+}
+
 #mainArticle img {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
     padding: 5px;
     height: 60%;
@@ -126,6 +130,7 @@ header, footer, article, nav, div {
     padding: 0px;
     max-width: 10em;
     overflow: hidden;
+    background: rgba(169, 169, 169, 0.64);
 }
 ul.breadcrumb {
     list-style: none;
@@ -158,7 +163,7 @@ ul.breadcrumb li+li:before {
     text-align: center;
 }
 #picture img {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(221, 221, 221, 0.64);
     border-radius: 4px;
     padding: 5px;
     width: 200px;
