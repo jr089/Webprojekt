@@ -41,7 +41,7 @@
                 include "warenkorb/index.php";
                 break;
             case "faq":
-                include "faq.php";
+                include "./faq.php";
                 break;
             case "kasse":
                 include "kasse/index.php";

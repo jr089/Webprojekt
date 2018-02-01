@@ -110,10 +110,13 @@ header, footer, article, nav, div {
 }
 #pageHeader li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+#pageHeader li a:hover {
+    background-color: #e2e2e2;
 }
 
 #sidebar{
@@ -126,6 +129,11 @@ header, footer, article, nav, div {
     max-width: 10em;
     overflow: hidden;
 }
+
+#sidebar li a:hover {
+    background-color: #e2e2e2;
+}
+
 #sidebar .sidebar-header{
     padding: 0px;
     max-width: 10em;
