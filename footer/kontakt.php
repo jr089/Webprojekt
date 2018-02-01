@@ -1,15 +1,15 @@
 <form method="post" action="footer/send_email.php">
-    <label for="Name">Name:</label><br>
-    <input type="text" id="Name" name="Name"><br><br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="Name"><br><br>
 
-    <label for="Email">E-Mail:</label><br>
-    <input type="text" id="Email" name="Email"><br><br>
+    <label for="email">E-Mail:</label><br>
+    <input type="text" id="email" name="Email"><br><br>
 
-    <label for="Betreff">Betreff:</label><br>
-    <input type="text" id="Betreff" name="Betreff"><br><br>
+    <label for="betreff">Betreff:</label><br>
+    <input type="text" id="betreff" name="Betreff"><br><br>
 
-    <label for="Nachricht">Nachricht:</label><br>
-    <textarea id="Nachricht" name="Nachricht" rows="10" cols="30"></textarea> <br><br>
+    <label for="nachricht">Nachricht:</label><br>
+    <textarea id="nachricht" name="Nachricht" rows="10" cols="30"></textarea> <br><br>
 
     <input type="submit" name="submit">
 </form>
