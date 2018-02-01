@@ -5,7 +5,7 @@
 <ul class="flex-container">
 <?php
 include_once "dbconnect.php";
-for($i=1; $i<=5; $i++){
+for($i=1; $i<=4; $i++){
 $nr = rand(1,80);
     $stmt = $db->query("SELECT * FROM artikel WHERE artikelnummer=" . $nr);
     $results = $stmt->fetchAll();
