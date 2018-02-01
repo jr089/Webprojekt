@@ -61,9 +61,9 @@
     ?>
 </article>
 <nav id="sidebar">
-    <div class="sidebar-header">
+   <!-- <div class="sidebar-header"> -->
         <h3>Navigation</h3>
-    </div>
+    <!-- </div> -->
 
     <!-- Sieht man immer, auch wenn man nicht eingeloggt ist -->
     <ul>

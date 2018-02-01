@@ -11,7 +11,7 @@ body {
     /*height: 95vh;*/
     margin: 3%;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(-90deg, royalblue, white, royalblue);
+    background: linear-gradient(-90deg, #8faee1, white, #8faee1);
     /*background-size: 100%;*/
 }
 header, footer, article, nav, div {
