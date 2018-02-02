@@ -194,6 +194,13 @@ table, th, td {
 th, td {
     padding: 15px;
 }
+#wkoverviewnr{
+    width: 50px;}
+#articleform{
+    overflow: scroll;
+}
+
+
 @media only screen and (max-device-width: 700px) {
     body {
         display: grid;
@@ -201,31 +208,34 @@ th, td {
         grid-template-rows: 80px 90px 1fr 70px;
         grid-template-columns: 150px 1fr 15%;
         grid-row-gap: 15px;
-        grid-column-gap: 10px;}
+        grid-column-gap: 10px;
+    }
 
-        #sidebar ul{
-            float: left;
-            margin: 0.1em;
-            max-width: none;
-        }
-        #sidebar li {
-            display: inline-flex;
-        }
-nav {
-padding: 0.1em;
-}
-.sidebar-header h3{
-    margin: 0.1em;
-}
+    #sidebar ul {
+        float: left;
+        margin: 0.1em;
+        max-width: none;
+    }
+
+    #sidebar li {
+        display: inline-flex;
+    }
+
+    nav {
+        padding: 0.1em;
+    }
+
+    .sidebar-header h3 {
+        margin: 0.1em;
+    }
+
     #sidebar .sidebar-header {
         max-width: unset;
     }
-    .articleview{
+
+    .articleview {
         display: grid;
-        grid-template-areas:
-                "picture"
-                "price"
-                "description";
+        grid-template-areas: "picture" "price" "description";
         grid-template-rows: 0fr 0fr 0fr;
         grid-template-columns: 1fr;
         grid-row-gap: 15px;
@@ -233,6 +243,7 @@ padding: 0.1em;
         height: 90%;
     }
 }
+
 @media only screen and (max-device-width: 360px) {
     body {
         display: grid;

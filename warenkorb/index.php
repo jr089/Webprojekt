@@ -5,10 +5,9 @@ if (isset($_SESSION['warenkorb']))
 {
 ?>
 <div>
-    <form action="./warenkorb/updatewk.php" method="post">
+    <form action="./warenkorb/updatewk.php" method="post" ID="articleform">
     <table>
     <tr>
-        <th>ID</th>
         <th>Artikel</th>
         <th>Preis</th>
         <th>Anzahl</th>
@@ -24,12 +23,11 @@ foreach ($_SESSION['warenkorb'] as $key => $wk){
     $ref = $key;
 ?>
     <tr>
-        <td><?=$key;?></td>
         <td><a href="?page=artikel&artikelnummer=<?php echo $results['artikelnummer']?>">
                 <?=$results['name'];?>
             </a></td>
         <td><?=$results['preis'];?></td>
-        <td><input type="number" name="anzahl[<?=$ref;?>]" value="<?=$wk['anzahl'];?>" min="1"</td>
+        <td><input type="number" ID="wkoverviewnr" name="anzahl[<?=$ref;?>]" value="<?=$wk['anzahl'];?>" min="1"</td>
         <td><input type="checkbox" name="delete[]" value="<?=$key;?>"></td>
         <input type="hidden" name="ref[]" value="<?=$ref;?>"
     </tr>
