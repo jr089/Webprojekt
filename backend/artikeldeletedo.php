@@ -9,7 +9,8 @@ if (!isset($_SESSION["email"]) || $_SESSION["rollen_id"] == 1)
 $artikelnummer=$_GET ["artikelnummer"];
 
 include ('../dbconnect.php');
-$stmt = $db->query("DELETE FROM artikel WHERE artikelnummer=" . $artikelnummer);
+$stmt = $db->prepare("DELETE FROM artikel WHERE artikelnummer=:artikelnummer");
+$stmt->bindParam(":artikelnummer", $artikelnummer);
 $stmt->execute();
 $filename="../artikel/artikelbilder/".$artikelnummer.'.jpg';
 unlink ( $filename );

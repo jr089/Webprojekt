@@ -20,9 +20,7 @@ $ort = $_POST['ort'];
 
 if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !empty($hausnr) && !empty($plz) && !empty($ort)) {
 
-
-    //echo "UPDATE Nutzer SET name='$name', vorname='$vorname , email=$email , strasse='$strasse' ,hausnr='$hausnr', plz='$plz' , ort='$ort' WHERE nutzer_id =$nutzerid ";
-    $stmt = $db->query("UPDATE Nutzer SET name='$name', vorname='$vorname' , email='$email' , strasse='$strasse' ,hausnr='$hausnr', plz='$plz' , ort='$ort' WHERE nutzer_id =$nutzerid ");
+    $stmt = $db->prepare("UPDATE Nutzer SET name=:name, vorname=:vorname, email=:email , strasse=:strasse ,hausnr=:hausnr, plz=:plz , ort=:ort WHERE nutzer_id =:nutzer_id ");
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":vorname", $vorname);
     $stmt->bindParam(":email", $email);
@@ -30,6 +28,7 @@ if (!empty($name) && !empty($vorname) && !empty($email) && !empty($strasse) && !
     $stmt->bindParam(":hausnr", $hausnr);
     $stmt->bindParam(":plz", $plz);
     $stmt->bindParam(":ort", $ort);
+    $stmt->bindParam(":nutzer_id", $nutzerid);
     $stmt->execute();
     header("Location: ../index.php?page=backend&action=benutzer");
 

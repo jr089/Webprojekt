@@ -13,7 +13,7 @@ $ean = $_POST["ean"];
 $bestand = $_POST["bestand"];
 $kategorie = $_POST["kategorie_id"];
 if (!empty($name) && !empty($preis) && !empty($beschreibung) &&!empty($ean) &&!empty($bestand) &&!empty($kategorie)) {
-    $sql= "INSERT INTO artikel SET artikelnummer='NULL',  name='".$name."', preis='".$preis."', beschreibung='".$beschreibung."',  ean='".$ean."', bestand='".$bestand."', kategorie_id='".$kategorie."'";
+    $sql= "INSERT INTO artikel SET artikelnummer='NULL',  name=:name, preis=:preis, beschreibung=:beschreibung,  ean=:ean, bestand=:bestand, kategorie_id=:kategorie_id";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":preis", $preis);
