@@ -27,6 +27,8 @@ echo "Preis: " .$results['preis']."€";
         <?php
         echo "Beschreibung </br></br>";
         echo $results['beschreibung'];
+        echo "</br></br>";
+        echo "EAN: " .$results['ean'];
         ?>
         </br></br>
 <form action="./warenkorb/add.php" method="post">
