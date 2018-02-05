@@ -5,15 +5,18 @@ session_start();
 include_once "../dbconnect.php";
 
 $email = $_SESSION["email"];
-echo $email;
+
 $stmt=$db->prepare("SELECT * FROM Nutzer WHERE email=:email");
 $stmt->bindParam(":email", $email);
 $stmt->execute();
 $results = $stmt->fetch();
 echo $results["passwort"];
 
+//alle Felder ausgefüllt
 if (isset($_POST["passwortalt"]) AND isset($_POST["passwortneu"]) AND isset($_POST["passwortneu2"])) {
     if (!empty($_POST["passwortalt"])&&!empty($_POST["passwortneu"])&&!empty($_POST["passwortneu2"])) {
+
+        //Überprüfung, ob das aktuelle Passwort richtig eingegeben wurde & Überprüfung, ob das neue Passwort zweimal gleich eingegeben wurde
         if (md5($_POST["passwortalt"]) == $results["passwort"]){
             if (md5($_POST["passwortneu"]) == md5($_POST["passwortneu2"])) {
                 $stmt = $db->prepare("UPDATE Nutzer SET passwort =:passwort WHERE email=:email");
@@ -42,7 +45,7 @@ if (isset($_POST["passwortalt"]) AND isset($_POST["passwortneu"]) AND isset($_PO
         else {
             echo "Altes Passwort stimmt nicht überein.";
             echo"
-                <form action=\"registerform.php\">
+                <form action=\"../index.php?page=account&action=registerform\">
                     <input type=\"submit\" value=\"Anmeldung erneut durchführen.\" />
                 </form>";
         }
@@ -52,7 +55,7 @@ if (isset($_POST["passwortalt"]) AND isset($_POST["passwortneu"]) AND isset($_PO
         echo "Bitte alle Felder ausfüllen.";
         echo
         "
-            <form action=\"registerform.php\">
+            <form action=\"../index.php?page=account&action=registerform\">
                 <input type=\"submit\" value=\"Anmeldung erneut durchführen.\" />
             </form>
             ";

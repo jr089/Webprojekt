@@ -28,7 +28,7 @@ foreach ($results as $row) {
         <input type="text" name="strasse" value="' . $row["strasse"] . '">
         <br>
         Hausnummer:
-        <input type="number" name="hausnr" value="' . $row["hausnr"] . '">
+        <input type="text" name="hausnr" value="' . $row["hausnr"] . '">
         <br>
         PLZ:
         <input type="number" name="plz" value="' . $row["plz"] . '">

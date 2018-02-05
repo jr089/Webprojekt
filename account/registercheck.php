@@ -19,8 +19,10 @@ if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]
                 echo "Datenbank-Fehler (registrieren)";
                 die();
             }
+
             header("Location: ../index.php");
-        } else {
+        }
+        else {
             echo "Passwort muss gleich sein";
             echo
             "
@@ -42,7 +44,8 @@ if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]
         ";
     }
 
-} else {
+}
+else {
     echo "Formular-Fehler (registrieren)";
 }
 

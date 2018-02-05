@@ -12,7 +12,10 @@ include ('../dbconnect.php');
 $stmt = $db->prepare("DELETE FROM artikel WHERE artikelnummer=:artikelnummer");
 $stmt->bindParam(":artikelnummer", $artikelnummer);
 $stmt->execute();
+
+
 $filename="../artikel/artikelbilder/".$artikelnummer.'.jpg';
 unlink ( $filename );
+
 header("location:../index.php?page=backend&action=artikel")
 ?>

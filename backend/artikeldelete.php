@@ -21,3 +21,4 @@ echo '<a href="backend/artikeldeletedo.php?artikelnummer='.        $artikelnumme
         <br>
       <a href="?page=backend&action=artikel">Nein, zurück zur Artikelübersicht.</a>';
 
+?>

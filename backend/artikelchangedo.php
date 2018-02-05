@@ -10,6 +10,8 @@ $artikelnummer = $_POST["artikelnummer"];
 $name = $_POST["name"];
 $preis = $_POST["preis"];
 $beschreibung = $_POST["beschreibung"];
+
+
 if (!empty($name) && !empty($preis) && !empty($beschreibung)) {
     $stmt = $db->prepare("UPDATE artikel SET name=:name, preis=:preis, beschreibung=:beschreibung WHERE artikelnummer =  :artikelnummer ");
     $stmt->bindParam(":name", $name);
@@ -18,7 +20,9 @@ if (!empty($name) && !empty($preis) && !empty($beschreibung)) {
     $stmt->bindParam(":artikelnummer", $artikelnummer);
     $stmt->execute();
     header("Location: ../index.php?page=backend&action=artikel");
-} else {
+}
+
+else {
     echo "Error: Bitte alle Felder ausfüllen!";
 }
 ?>
