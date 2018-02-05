@@ -24,7 +24,7 @@ if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]
             echo "Passwort muss gleich sein";
             echo
             "
-        <form action=\"registerform.php\">
+        <form action=\"registerfail.php\">
             <input type=\"submit\" value=\"Anmeldung erneut durchführen.\" />
         </form>
         ";
@@ -36,7 +36,7 @@ if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]
         echo "Bitte alle Felder ausfüllen.";
         echo
         "
-        <form action=\"registerform.php\">
+        <form action=\"registerfail.php\">
             <input type=\"submit\" value=\"Anmeldung erneut durchführen.\" />
         </form>
         ";
