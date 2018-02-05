@@ -8,4 +8,8 @@ echo '<div class="form">
 <input type="submit" value="Einloggen">
 </form>
 </div>';
+
+echo '<a href="?page=account&action=registerform">Registrieren</a>';
+
+
 ?>
