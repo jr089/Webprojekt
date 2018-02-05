@@ -32,6 +32,7 @@ if (isset($id)) {
 </div>
 <ul class="flex-container">
     <?php
+    //Prüfen der übergebenen Kategorieid und Ausgabe der Artikel mit der ID
     foreach ($results as $rowkategorie) {
         $artikelname = $rowkategorie['name'];
         $preis = $rowkategorie['preis'];

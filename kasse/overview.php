@@ -3,6 +3,7 @@ session_start();
 include "./dbconnect.php";
 if (isset($_SESSION['warenkorb']))
 {
+    //Ausgabe aus der Bestellung aus Variablen und Datenbank und AGB + Datenschutz
     ?>
     <div>
         <form action="./kasse/checkout.php" method="post">

@@ -9,7 +9,7 @@
             $results = $stmt->fetch();
         }
 ?>
-
+// Artikeldaten werden in Template geladen
 <div class="articleview">
 
     <div id="picture">

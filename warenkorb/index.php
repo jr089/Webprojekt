@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "./dbconnect.php";
+//Ansicht Warenkorb und Möglichkeit die Anzahl zu ändern und Artikel zu löschen
 if (isset($_SESSION['warenkorb']))
 {
 ?>
