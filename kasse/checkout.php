@@ -8,7 +8,7 @@ if (isset($_SESSION['login'])) {
         echo "AGB oder Zahlungsart nicht angegeben";
     }
     else {
-        //Prüfen und erweitern der aktuell höchsten Bestellnummer
+        //Prüfen und Erweitern der aktuell höchsten Bestellnummer
         $sql = "SELECT MAX(bestellnummer) + 1 FROM bestellungen";
         $stmt = $db->prepare($sql);
         $stmt->execute();

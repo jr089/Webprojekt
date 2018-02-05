@@ -1,14 +1,10 @@
 <?php
 
 $sendermail_antwort = true;
-$name_emailfeld = $_POST["Email"];
+$email = $_POST["Email"];
 
 $empfaenger = "jukian.webshop@yandex.com";
 $betreff = "Neue Kontaktanfrage";
-
-
-//Diese Felder werden nicht in der Mail stehen
-$ignore_fields = array('submit');
 
 
 $jahr = date("Y");
@@ -20,19 +16,18 @@ $time = date("H:i");
 $msg = ":: Gesendet am $n.$monat.$jahr - $time Uhr ::\n\n";
 
 
-while (list($name,$value) = each($_POST)) {
-    if (in_array($name, $ignore_fields)) {
-        continue;
-    }
-    $msg .= "$name:\n$value\n\n";
-}
+$msg .= "Name: "."\n".$_POST["Name"]."\n\n";
+$msg .= "E-Mail: "."\n".$_POST["Email"]."\n\n";
+$msg .= "Betreff: "."\n".$_POST["Betreff"]."\n\n";
+$msg .= "Nachricht: "."\n".$_POST["Nachricht"]."\n\n";
+
 
 
 if (isset($_POST["Name"]) AND isset($_POST["Email"]) AND isset($_POST["Betreff"]) AND isset($_POST["Nachricht"])){
     if (!empty($_POST["Name"])&&!empty($_POST["Email"])&&!empty($_POST["Betreff"])&&!empty($_POST["Nachricht"])) {
 
 
-        $header = "From: $name_emailfeld";
+        $header = "From: $email";
 
 
         $mail_senden = mail($empfaenger, $betreff, $msg, $header);
