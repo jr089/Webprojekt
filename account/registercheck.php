@@ -14,7 +14,7 @@ if (isset($_POST["name"]) AND isset($_POST["vorname"]) AND isset($_POST["email"]
             $stmt->bindParam(":ort", $_POST["ort"]);
             $stmt->bindParam(":passwort", md5($_POST["passwort"]));
 
-
+//wenn Statement nicht ausgeführt werden kann
             if (!$stmt->execute()) {
                 echo "Datenbank-Fehler (registrieren)";
                 die();

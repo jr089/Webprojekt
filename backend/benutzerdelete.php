@@ -15,6 +15,7 @@ $results=$stmt->fetch();
 $name=$results["name"];
 $vorname=$results["vorname"];
 
+//Erneute Abfrage zur Sicherheit
 echo "Wollen Sie den Benutzer $vorname $name wirklich löschen?";
 echo "<br><br>";
 echo '<a href="backend/benutzerdeletedo.php?nutzer_id='.        $nutzerid .'">Ja, Benutzer löschen.</a>
